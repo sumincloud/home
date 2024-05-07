@@ -92,7 +92,7 @@ img{display: block;}
 
   /* 웅진소식 슬라이드 서식 */
   .mySwiper3{
-    margin-top: 30px;width: 1780px;
+    margin-top: 30px;width: 2034px;
   }
   .mySwiper3 .swiper-wrapper{
     display: flex;
@@ -101,12 +101,20 @@ img{display: block;}
     height: 460px;margin-top: 10px;
   }
   .swiper-btn{
-    position: absolute;
-    top: 0; right: 0;
+    position: relative;
+    display: flex !important;
+    top: -516px; right: 0px;
+    font-size: var(--font_size_2);
   }
   .swiper-button-prev:after, .swiper-button-next:after {
     display: none !important;
   }
+  .swiper-button-prev{
+    position: absolute !important;
+    left: 1110px !important;
+  }
+
+
 
   .news_con{
     background-color: #ffffff;
