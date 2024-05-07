@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/* 공통서식 */
+:root{
+  --main_color_1:#FF8F00;
+  --main_color_2:#FFE605;
+  --main_color_3:#89C824;
+
+  --sub_color_1:#E61A23;
+  --sub_color_2:#009DDC;
+
+  --text_color_1:#333;
+
+  --container_size:1200px;
+}
+
+
+/* --------------헤더서식------------ */
+header{
+  width: 100%;height: 100px;
+  background: pink;
+  position: fixed;
+  z-index: 10;
+}
+header > h1{
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  left: 3%;
+}
+header > h1 img{width: 100%;display: block;}
+
+
+
+
+
+
+
+/* --------------메인서식------------ */
+
+
+
+
+
+
+
+
+
+
+/* --------------푸터서식------------ */
