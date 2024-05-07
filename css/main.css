@@ -167,12 +167,24 @@ img{display: block;}
     margin-bottom: 20px;
   }
 
+/* 6. 인재채용 서식 */
 .recruit .title{text-align: center;}
 .recruit_list{display: flex;justify-content: space-between;}
 .recruit_list li{
   background: lightgoldenrodyellow;
   width: 380px;
   height: 480px;
-
+  position: relative;
+}
+.recruit_list li > div{
+  display: inline-block;
+  position: absolute;
+  top: 50%;left: 50%; transform: translate(-50%,-50%);
+}
+.recruit_list li div img{display: inline-block;}
+.recruit_btn{
+  width: 60px;height: 60px;
+  border-radius: 50%;
+  background: white;
 }
 
