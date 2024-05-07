@@ -29,10 +29,10 @@ main article{height: 100vh;background: lightblue;padding-top: 250px;}
   width: var(--container_size);margin: 0 auto;
   background: skyblue;
 }
-.title dt{font-size: var(--font_size_1);}
+.title dt{font-size: var(--font_size_1);font-weight: 600;}
 .title dd{font-size: var(--font_size_3);margin-top: 30px;line-height: 160%;}
 
-.sub_title dt{font-size: var(--font_size_2);}
+.sub_title dt{font-size: var(--font_size_2);font-weight: 600;}
 .sub_title dd{font-size: var(--font_size_4);margin-top: 30px;line-height: 160%;}
 
 .more{font-size: var(--font_size_3);margin-top: 30px;}

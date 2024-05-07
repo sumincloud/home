@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+/* 프리텐다드 폰트 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+body{
+  font-family: 'pretendard', "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
 /* 공통서식 */
 :root{
   --main_color_1:#FF8F00;
