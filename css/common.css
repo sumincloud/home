@@ -48,17 +48,17 @@ header > h1 img{width: 100%;display: block;}
 /* --------------푸터서식------------ */
 footer{
   background: #666;
-  height: 500px;
+  height: 700px;
 }
 
-.footer_sub{
+.footer_top{
   background: white; 
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
   height: 380px;
   position: relative;
 }
 
-.footer_sub > nav{
+.footer_top > nav{
   display: table; /* 테이블 속성으로 지정 */
   border-collapse: collapse;
   width: var(--container_size);
@@ -66,7 +66,7 @@ footer{
   justify-content: space-between;
   height: 100%;
 }
-.footer_sub dl{
+.footer_top dl{
   display: table-cell;  /* 테이블 속성으로 지정 */
   line-height: 30px;
   border-left: 1px solid #ccc;
@@ -74,25 +74,36 @@ footer{
   width: 20%;
   padding: 30px 0 0 50px;
 }
-.footer_sub a{
+.footer_top a{
   text-decoration: none;
 }
-.footer_sub dl dt{
+.footer_top dl dt{
   font-weight: 600;
 }
 
 
 /* address서식 */
-address{
+.footer_btm{
   width: 1200px;display: flex;
   justify-content: space-between;
-  height: 70px;margin: 0 auto;
- 
+  margin: 0 auto;
+  height: 150px;
+  background: lightcyan;
+}
+.footer_btm > h2 img{width: 100%;}
+.footer_btm ul{display: flex;flex-wrap: 3;}
+.footer_btm li::after {
+  content: '';
+  display: inline-block;
+  margin-left: 10px;
+  width: 1px;
+  height: 10px;
+  background-color: #b2b2b2;
 }
 
-address > h2 img{width: 100%;}
-address p{line-height: 70px;}
+#site{
 
+}
 
 /* 탑버튼 서식 */
 .t_btn{
