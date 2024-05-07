@@ -90,7 +90,7 @@ img{display: block;}
   margin-top: 20px;
 }
 
-  /* 웅진소식 슬라이드 서식 */
+  /* 웅진소식 슬라이드 스와이퍼 서식 */
   .mySwiper3{
     margin-top: 30px;width: 2034px;height: 450px;
   }
@@ -115,8 +115,7 @@ img{display: block;}
     left: 1110px !important;
   }
 
-
-
+  /* 웅진소식 컨텐츠 서식 */
   .news_con{
     background-color: #ffffff;
     border-radius: 20px;
@@ -167,4 +166,13 @@ img{display: block;}
     -webkit-box-orient: vertical;
     margin-bottom: 20px;
   }
+
+.recruit .title{text-align: center;}
+.recruit_list{display: flex;justify-content: space-between;}
+.recruit_list li{
+  background: lightgoldenrodyellow;
+  width: 380px;
+  height: 480px;
+
+}
 
