@@ -169,6 +169,7 @@ img{display: block;}
   }
 
 /* 6. 인재채용 서식 */
+.recruit{margin-bottom: 100px;}
 .recruit .title{text-align: center;}
 .recruit_list{display: flex;justify-content: space-between;}
 .recruit_list li{
