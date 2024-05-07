@@ -24,7 +24,7 @@
 }
 
 /* -----메인 컨텐츠 공통 사이즈----- */
-main article{height: 100vh;background: lightblue;padding-top: 250px;}
+main article{height: auto;background: lightblue;padding-top: 200px;}
 .inner1200{
   width: var(--container_size);margin: 0 auto;
   background: skyblue;
@@ -35,7 +35,7 @@ main article{height: 100vh;background: lightblue;padding-top: 250px;}
 .sub_title dt{font-size: var(--font_size_2);font-weight: 600;}
 .sub_title dd{font-size: var(--font_size_4);margin-top: 30px;line-height: 160%;}
 
-.more{font-size: var(--font_size_3);margin-top: 30px;}
+.more{font-size: var(--font_size_3);margin-top: 70px;}
 img{display: block;}
 
 
@@ -61,6 +61,7 @@ img{display: block;}
 }
 
 /* 2.웅진소개 */
+.intro{padding-top: 250px;}
 .intro section{display: flex;justify-content: space-between;}
 
 
@@ -78,7 +79,7 @@ img{display: block;}
 .esg .title{text-align: center;}
 .esg .sub_title{margin-top: 30px;text-align: center;}
 .esg_list{display: flex;justify-content: space-between;margin-top: 50px;}
-.esg .more{text-align: center;margin-top: 70px;}
+.esg .more{text-align: center;}
 
 
 /* 5. 웅진의 소식 */
@@ -92,7 +93,7 @@ img{display: block;}
 
   /* 웅진소식 슬라이드 스와이퍼 서식 */
   .mySwiper3{
-    margin-top: 30px;width: 2034px;height: 450px;
+    margin-top: 50px;width: 2034px;height: 450px;
   }
   .mySwiper3 .swiper-wrapper{
     display: flex;
@@ -184,10 +185,13 @@ img{display: block;}
   width: 300px;
 }
 .recruit_list li div img{display: inline-block;}
+.recruit_list .sub_title{margin-top: 30px;}
 .recruit_btn{
   width: 60px;height: 60px;
   border-radius: 50%;
   background: white;
   display: inline-block;
+  margin-top: 30px;
 }
+.recruit .more{text-align: center;margin-top: 70px;}
 
