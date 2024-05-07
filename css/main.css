@@ -19,6 +19,7 @@
   --font_size_4:1.125rem;  /* 18px */
   --font_size_5:1rem;  /* 16px */
 
+  --swiper-theme-color: #343434 !important;
 
 }
 
@@ -99,6 +100,13 @@ img{display: block;}
   .mySwiper3 .swiper-slide{
     height: 460px;margin-top: 10px;
   }
+  .swiper-btn{
+    position: absolute;
+    top: 0; right: 0;
+  }
+  .swiper-button-prev:after, .swiper-button-next:after {
+    display: none;
+  }
 
   .news_con{
     background-color: #ffffff;
@@ -149,3 +157,4 @@ img{display: block;}
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
