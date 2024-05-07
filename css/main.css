@@ -19,7 +19,7 @@
   --font_size_4:1.125rem;  /* 18px */
   --font_size_5:1rem;  /* 16px */
 
-  --swiper-theme-color: #343434 !important;
+  --swiper-theme-color: #333333 !important;
 
 }
 
@@ -105,7 +105,7 @@ img{display: block;}
     top: 0; right: 0;
   }
   .swiper-button-prev:after, .swiper-button-next:after {
-    display: none;
+    display: none !important;
   }
 
   .news_con{
