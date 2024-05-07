@@ -33,7 +33,7 @@ main article{height: 100vh;background: lightblue;padding-top: 250px;}
 .title dd{font-size: var(--font_size_3);margin-top: 30px;line-height: 160%;}
 
 .sub_title dt{font-size: var(--font_size_2);}
-.sub_title dd{font-size: var(--font_size_3);margin-top: 30px;line-height: 160%;}
+.sub_title dd{font-size: var(--font_size_4);margin-top: 30px;line-height: 160%;}
 
 .more{font-size: var(--font_size_3);margin-top: 30px;}
 img{display: block;}
@@ -180,11 +180,14 @@ img{display: block;}
   display: inline-block;
   position: absolute;
   top: 50%;left: 50%; transform: translate(-50%,-50%);
+  text-align: center;
+  width: 300px;
 }
 .recruit_list li div img{display: inline-block;}
 .recruit_btn{
   width: 60px;height: 60px;
   border-radius: 50%;
   background: white;
+  display: inline-block;
 }
 
