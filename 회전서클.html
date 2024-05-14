@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="uft-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진_인재채용</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{color: #333;}
+
+    /* 웅진소개 */
+    .intro_box{width: 740px; height: 740px; border:2px solid #000; position:relative; margin: 0 auto;}
+    .intro_box > .circle{
+        border:1px solid #333;
+        width: 700px;
+        height: 700px;
+        border-radius:50%;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+    }
+    .intro_box > .center{
+        width: 320px;
+        height: 320px;
+        border-radius:50%;
+        background: #fff;
+        border: 1px dashed #333;
+        margin: 210px auto;
+    }
+    .intro_box > .center > p{
+        display: block;
+        width: 300px;
+        height: 300px;
+        border-radius:50%;
+        background: #ff8e00;
+        margin: 10px auto;
+        text-align: center;
+        line-height: 300px;
+        font-size: 30px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .intro_box > .cir_box{
+        position: absolute;
+        width: 540px;
+        height: 540px;
+        left: 100px;
+        top: 100px;
+        border: 1px solid #fff;
+    }
+    .cir_box > .cir1, .cir_box > .cir2, .cir_box > .cir3, .cir_box > .cir4{
+        position:absolute;
+        width: 220px;
+        height: 220px;
+        border-radius:50%;
+        border: 1px dashed #333;
+    }
+    .cir_box > .cir1{left:-100px;top:-100px;}
+    .cir_box > .cir2{right:-100px;top:-100px;}
+    .cir_box > .cir3{left:-100px;bottom:-100px;}
+    .cir_box > .cir4{right:-100px;bottom:-100px;}
+    .cir_box p{
+        display: block;
+        width: 200px;
+        height: 200px;
+        border-radius:50%;
+        margin: 10px auto;
+        text-align: center;
+        line-height: 200px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .cir_box > .cir1 > p{background: #ffd105;}
+    .cir_box > .cir2 > p{background: #89c824;}
+    .cir_box > .cir3 > p{background: #e61a23;}
+    .cir_box > .cir4 > p{background: #009ddc;}
+
+    /* 수민언니 서브 */
+    .info_box{width: 690px; height: 690px; border:2px solid #000; position:relative; margin: 0 auto;}
+    .info_box > .center{
+        width: 480px;
+        height: 480px;
+        border-radius:50%;
+        background: #fff;
+        border: 1px dashed #333;
+        margin: 105px auto;
+    }
+    .info_box > .center > p{
+        display: block;
+        width: 380px;
+        height: 380px;
+        border-radius:50%;
+        background: rgba(0,157,220,0.1);
+        margin: 50px auto;
+        text-align: center;
+        line-height: 380px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .info_box > .cir_ani{
+        position: absolute;
+        width: 380px;
+        height: 380px;
+        left: 155px;
+        top: 155px;
+        border: 1px solid #fff;
+        animation:ani01 20s linear infinite;
+    }
+    .cir_ani > .cir1{position:absolute; left:-80px;top:-80px; animation:ani 20s linear infinite;}
+    .cir_ani > .cir2{position:absolute; right:-80px;top:-80px; animation:ani 20s linear infinite;}
+    .cir_ani > .cir3{position:absolute; left:-80px;bottom:-80px; animation:ani 20s linear infinite;}
+    .cir_ani > .cir4{position:absolute; right:-80px;bottom:-80px; animation:ani 20s linear infinite;}
+    .cir_ani p{
+        display: block;
+        width: 178px;
+        height: 178px;
+        border-radius:50%;
+        text-align: center;
+        line-height: 178px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .cir_ani > .cir1 > p{background: #009ddc;}
+    .cir_ani > .cir2 > p{background: #e61a23;}
+    .cir_ani > .cir3 > p{background: #89c824;}
+    .cir_ani > .cir4 > p{background: #ffd105;}
+    @keyframes ani{100%{transform:rotate(-360deg);}}
+    @keyframes ani01{100%{transform:rotate(360deg);}}
+    </style>
+</head>
+<body>
+    <!-- 웅진소개 -->
+    <div class="intro_box">
+            <div class="center"><p>또또사랑</p></div>
+            <div class="circle"></div>
+            <div class="cir_box">
+                <div class="cir1"><p>창조</p></div>
+                <div class="cir2"><p>윤리</p></div>
+                <div class="cir3"><p>혁신</p></div>
+                <div class="cir4"><p>환경</p></div>
+            </div>
+    </div>
+
+    <!-- 수민언니 서브 -->
+    <div class="info_box">
+            <div class="center"><p>또또사랑</p></div>
+            <div class="circle"></div>
+            <div class="cir_ani">
+                <div class="cir1"><p>창조</p></div>
+                <div class="cir2"><p>윤리</p></div>
+                <div class="cir3"><p>혁신</p></div>
+                <div class="cir4"><p>환경</p></div>
+            </div>
+    </div>
+</body>
+</html>

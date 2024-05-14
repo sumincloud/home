@@ -10,55 +10,119 @@
   <link href="./css/common.css" rel="stylesheet" type="text/css">
   <!-- 3. main서식 -->
   <link href="./css/main.css" rel="stylesheet" type="text/css">
-
+  
   <!-- 아이콘폰트 주소 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  
   <!-- 제이쿼리 라이브러리 연결 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
+  
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-
-
-
+  
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 </head>
 <body>
   <!-- ------------헤더영역----------- -->
   <header>
-    <h1>
-      <a href="index.html" title="메인페이지로 바로가기">
-        <img src="https://dummyimage.com/260x80" alt="상단로고">
-      </a>
-    </h1>
+    <div class="h_inner">
+      <!-- 로고 -->
+      <h1 class="logo">
+        <a href="index.html" title="메인페이지로 바로가기">
+          <img src="./images/logo.png" alt="상단로고">
+        </a>
+      </h1>
+
+      <!-- gnb -->
+      <div class="inner1200">
+        <nav class="gnb_box">
+          <ul class="gnb">
+            <li>
+              <a href="#">웅진소개</a>
+              <ul class="lnb">
+                <li><a href="#">웅진소개</a></li>
+                <li><a href="#">CI</a></li>
+                <li><a href="#">연혁</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">계열사</a>
+              <ul class="lnb">
+                <li><a href="#">웅진 IT</a></li>
+                <li><a href="#">웅진씽크빅</a></li>
+                <li><a href="#">웅진북센</a></li>
+                <li><a href="#">렉스필드컨트리클럽</a></li>
+                <li><a href="#">웅진플레이도시</a></li>
+                <li><a href="#">웅진컴퍼스</a></li>
+                <li><a href="#">웅진헬스원</a></li>
+                <li><a href="#">놀이의 발견</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">지속가능경영</a>
+              <ul class="lnb">
+                <li><a href="#">웅진재단</a></li>
+                <li><a href="#">사회공헌</a></li>
+                <li><a href="#">윤리경영</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">소식</a>
+              <ul class="lnb">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">언론보도</a></li>
+                <li><a href="#">홍보자료실</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">인재채용</a>
+              <ul class="lnb">
+                <li><a href="#">인재상</a></li>
+                <li><a href="#">인사제도</a></li>
+                <li><a href="#">직무소개</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      
+      <!-- util -->
+      <div class="util">
+        <div>로그인</div>
+        <div>로그인</div>
+      </div>
+    </div>
+    
+
+    
   </header>
 
   <!-- ------------메인영역----------- -->
-  <main>
+  <main id="fullpage">
     <!-- 1. 메인 슬라이드 -->
-    <article class="slide">
+    <section class="fullsection full1 slide">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="./images/visual01.png">
+            <img src="./images/main1.png" alt="메인이미지">
           </div>
           <div class="swiper-slide">
-            <img src="./images/visual02.jpg">
+            <img src="./images/main2.jpg" alt="메인이미지">
           </div>
           <div class="swiper-slide">
-            <img src="./images/visual03.jpg">
+            <img src="./images/main3.jpg" alt="메인이미지">
           </div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
-    </article>
+    </section>
 
     <!-- 2. 웅진소개 -->
-    <article class="intro">
-      <section class="inner1200">
+    <section class="fullsection full2 intro">
+      <article class="inner1200">
         <div class="title">
           <dl>
             <dt>웅진소개</dt>
@@ -68,42 +132,96 @@
           </dl>
           <p class="more">VIEW MORE +</p>
         </div>
-        <div>
-          <img src="https://dummyimage.com/700x700" alt="또또사랑">
+          <div class="intro_box">
+            <div class="circle"></div>
+            <div class="cir_box">
+              <div>
+                <div><span>창조</span></div>
+              </div>
+              <div>
+                <div><span>윤리</span></div>
+              </div>
+              <div>
+                <div><span>혁신</span></div>
+              </div>
+              <div>
+                <div><span>환경</span></div>
+              </div>
+            </div>
+
+
         </div>
-      </section>
-    </article>
+      </article>
+    </section>
 
     <!-- 3. 계열사 -->
-    <article class="group">
-      <section class="inner1200">
+    <section class="fullsection full3 group">
+      <article class="inner1200">
         <div class="title">
           <dl>
             <dt>계열사</dt>
             <dd>웅진의 기술과 즐거움으로 다가가 일상을 더 편하고 행복하게 물들여 갑니다.</dd>
           </dl>
         </div>
-      </section>
-      <!-- Swiper -->
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">Slide 6</div>
-          <div class="swiper-slide">Slide 7</div>
-          <div class="swiper-slide">Slide 8</div>
-          <div class="swiper-slide">Slide 9</div>
+      </article>
+
+      <div class="wrap"> <!-- 배너표시영역 -->
+        <div class="rolling-list"> <!-- 원본배너 -->
+          <ul>
+            <li>
+              <div>
+                <img src="./images/group1.jpg" alt="웅진IT">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/group2.jpg" alt="웅진씽크빅">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/group3.jpg" alt="웅진북센">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/group4.jpg" alt="렉스필드컨트리클럽">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/group5.jpg" alt="웅진플레이도시">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/group6.jpg" alt="웅진컴퍼스">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/group7.jpg" alt="웅진헬스원">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/group8.jpg" alt="놀이의 발견">
+              </div>
+            </li>
+
+          </ul>
         </div>
       </div>
+
+
+
+
       <p class="more">VIEW MORE +</p>
-    </article>
+    </section>
 
     <!-- 4. 지속가능경영 -->
-    <article class="esg">
-      <section class="inner1200">
+    <section class="fullsection full4 esg">
+      <article class="inner1200">
         <div class="title">
           <dl>
             <dt>지속가능경영</dt>
@@ -114,7 +232,7 @@
         <div>
           <ul class="esg_list">
 						<li>
-              <div><img src="https://dummyimage.com/355x355" alt="웅진재단"></div>
+              <div><img src="./images/esg1.jpg" alt="웅진재단"></div>
               <dl class="sub_title">
                 <dt>웅진재단</dt>
                 <dd>따뜻한 사회, 아름다운 세상을 만들어 나가는데<br>
@@ -122,7 +240,7 @@
               </dl>
 						</li>
 						<li>
-              <div><img src="https://dummyimage.com/355x355" alt="사회공헌"></div>
+              <div><img src="./images/esg2.jpg" alt="사회공헌"></div>
               <dl class="sub_title">
                 <dt>사회공헌</dt>
                 <dd>우리가 가진 역량과 재원을 사회에 기여하고,<br>
@@ -130,7 +248,7 @@
               </dl>
 						</li>
 						<li>
-              <div><img src="https://dummyimage.com/355x355" alt="윤리경영"></div>
+              <div><img src="./images/esg3.jpg" alt="윤리경영"></div>
               <dl class="sub_title">
                 <dt>윤리경영</dt>
                 <dd>웅진의 윤리경영은 회계의 투명성 뿐만 아니라<br>
@@ -140,25 +258,25 @@
 					</ul>
         </div>
         <p class="more">VIEW MORE +</p>
-      </section>
-    </article>
+      </article>
+    </section>
 
     <!-- 5. 웅진의 소식 -->
-    <article class="news">
-      <section class="inner1200">
+    <section class="fullsection full5 news">
+      <article class="inner1200">
         <div class="title">
           <dl>
             <dt>웅진의 소식</dt>
             <dd>오늘의 작은 성장으로 미래의 큰 꿈을 실현해 나갑니다.<br>
               우리 생활 곳곳에서 항상 함께하는 웅진의 소식을 확인하실 수 있습니다.</dd>
-            </dl>
-            <p class="more">VIEW MORE +</p>
+          </dl>
+          <p class="more">VIEW MORE +</p>
         </div>      
         <div class="swiper mySwiper3">
           <div class="swiper-wrapper">
             <div class="swiper-slide news_con">
               <div>
-                <img src="https://dummyimage.com/400x300" alt="웅진소식">
+                <img src="./images/news1.jpg" alt="웅진소식">
               </div>
               <p class="news_title">이수영 대표 "5년 후엔 웅진을 IT 회사로
                 인식하게 될 것" [강경주의 IT카페]</p>
@@ -167,7 +285,7 @@
             </div>
             <div class="swiper-slide news_con">
               <div>
-                <img src="https://dummyimage.com/400x300" alt="웅진소식">
+                <img src="./images/news2.jpg" alt="웅진소식">
               </div>
               <p class="news_title">이수영 대표 "5년 후엔 웅진을 IT 회사로
                 인식하게 될 것" [강경주의 IT카페]</p>
@@ -176,7 +294,7 @@
             </div>
             <div class="swiper-slide news_con">
               <div>
-                <img src="https://dummyimage.com/400x300" alt="웅진소식">
+                <img src="./images/news3.jpg" alt="웅진소식">
               </div>
               <p class="news_title">이수영 대표 "5년 후엔 웅진을 IT 회사로
                 인식하게 될 것" [강경주의 IT카페]</p>
@@ -185,7 +303,7 @@
             </div>
             <div class="swiper-slide news_con">
               <div>
-                <img src="https://dummyimage.com/400x300" alt="웅진소식">
+                <img src="./images/news4.jpg" alt="웅진소식">
               </div>
               <p class="news_title">이수영 대표 "5년 후엔 웅진을 IT 회사로
                 인식하게 될 것" [강경주의 IT카페]</p>
@@ -194,7 +312,7 @@
             </div>
             <div class="swiper-slide news_con">
               <div>
-                <img src="https://dummyimage.com/400x300" alt="웅진소식">
+                <img src="./images/news5.jpg" alt="웅진소식">
               </div>
               <p class="news_title">이수영 대표 "5년 후엔 웅진을 IT 회사로
                 인식하게 될 것" [강경주의 IT카페]</p>
@@ -203,7 +321,7 @@
             </div>
             <div class="swiper-slide news_con">
               <div>
-                <img src="https://dummyimage.com/400x300" alt="웅진소식">
+                <img src="./images/news6.jpg" alt="웅진소식">
               </div>
               <p class="news_title">이수영 대표 "5년 후엔 웅진을 IT 회사로
                 인식하게 될 것" [강경주의 IT카페]</p>
@@ -220,12 +338,12 @@
           <div class="swiper-button-prev"><i class="fa-solid fa-arrow-left"></i></div>
           <div class="swiper-button-next"><i class="fa-solid fa-arrow-right"></i></div>
         </div>
-      </section>
-    </article>
+      </article>
+    </section>
 
     <!-- 6. 인재채용 -->
-    <article class="recruit">
-      <section class="inner1200">
+    <section class="fullsection full6 recruit">
+      <article class="inner1200">
         <div class="title">
           <dl>
             <dt>인재채용</dt>
@@ -236,7 +354,7 @@
           <ul class="recruit_list">
 						<li>
               <div>
-                <img src="https://dummyimage.com/150x150" alt="인재상">
+                <img src="./images/recruit1.png" alt="인재상">
                 <dl class="sub_title">
                   <dt>인재상</dt>
                   <dd>웅진을 함께 이끌어갈 <br>인재를 환영합니다.</dd>
@@ -246,7 +364,7 @@
 						</li>
 						<li>
               <div>
-                <img src="https://dummyimage.com/150x150" alt="인재상">
+                <img src="./images/recruit2.png" alt="인사제도">
                 <dl class="sub_title">
                   <dt>인사제도</dt>
                   <dd>채용제도부터 복리후생까지 <br>일련과정과 정보를 제공합니다.</dd>
@@ -256,7 +374,7 @@
 						</li>
 						<li>
               <div>
-                <img src="https://dummyimage.com/150x150" alt="인재상">
+                <img src="./images/recruit3.png" alt="직무소개">
                 <dl class="sub_title">
                   <dt>직무소개</dt>
                   <dd>웅진과 각 계열사별로 구성하고 있는 <br>직무를 소개합니다.</dd>
@@ -267,142 +385,180 @@
 					</ul>
         </div>
         <p class="more">VIEW MORE +</p>
-      </section>
-    </article>
+      </article>
+    </section>
+
+    <!-- 7. 푸터 -->
+    <section class="fullsection full7 recruit">
+      <footer>
+        <a href="#" title="위로 바로가기" class="t_btn">
+          <img src="./images/top_up.png" alt="위로 바로가기">
+        </a>
+        <div class="footer_top">
+          <nav>
+            <dl>
+              <dt><a href="#" title="웅진소개">웅진소개</a></dt>
+              <dd><a href="#" title="CI">CI</a></dd>
+              <dd><a href="#" title="연혁">연혁</a></dd>
+            </dl>
+            <dl>
+              <dt><a href="#" title="계열사">계열사</a></dt>
+              <dd><a href="#" title="웅진IT">웅진IT</a></dd>
+              <dd><a href="#" title="웅진씽크빅">웅진씽크빅</a></dd>
+              <dd><a href="#" title="웅진북센">웅진북센</a></dd>
+              <dd><a href="#" title="렉스필드컨트리클럽">렉스필드컨트리클럽</a></dd>
+              <dd><a href="#" title="웅진플레이도시">웅진플레이도시</a></dd>
+              <dd><a href="#" title="웅진컴퍼스">웅진컴퍼스</a></dd>
+              <dd><a href="#" title="웅진헬스원">웅진헬스원</a></dd>
+              <dd><a href="#" title="놀이의 발견">놀이의 발견</a></dd>
+            </dl>
+            <dl>
+              <dt><a href="#" title="지속가능경영">지속가능경영</a></dt>
+              <dd><a href="#" title="웅진재단">웅진재단</a></dd>
+              <dd><a href="#" title="사회공헌">사회공헌</a></dd>
+              <dd><a href="#" title="윤리경영">윤리경영</a></dd>
+            </dl>
+            <dl>
+              <dt><a href="#" title="소식">소식</a></dt>
+              <dd><a href="#" title="공지사항">공지사항</a></dd>
+              <dd><a href="#" title="언론보도">언론보도</a></dd>
+              <dd><a href="#" title="홍보자료실">홍보자료실</a></dd>
+            </dl>
+            <dl>
+              <dt><a href="#" title="인재채용">인재채용</a></dt>
+              <dd><a href="#" title="인재상">인재상</a></dd>
+              <dd><a href="#" title="인사제도">인사제도</a></dd>
+              <dd><a href="#" title="직무소개">직무소개</a></dd>
+            </dl>
+          </nav>
+        </div>
+        <address class="footer_btm">
+          <div class="btm_box">
+            <h2>
+              <a href="index.html" title="메인페이지로 바로가기">
+              <img src="./images/footer_logo.png" alt="하단로고"></a>
+            </h2>
+            <div>
+              <ul>
+                <li>대표이사 : 이수영 </li>
+                <li>사업자등록번호 : 208-81-06344</li>
+                <li>주소 : 서울특별시 중구 청계천로 24, 6~9층, 16층(04521)</li>
+                <li><a href="#">웹접근성 정책 안내</a></li>
+                <li><a href="#">법적고지</a></li>
+                <li><a href="#">영상정보처리방침</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+              </ul>
+            </div>
+            <form action="#">
+              <label for="site"></label>
+              <select name="family_site" id="site">
+                <option value="#">FAMILY SITE</option>
+                <option value="#">웅진IT</option>
+                <option value="#">웅진씽크빅</option>
+                <option value="#">웅진북센</option>
+                <option value="#">렉스필드컨트리클럽</option>
+                <option value="#">웅진플레이도시</option>
+                <option value="#">웅진컴퍼스</option>
+                <option value="#">웅진헬스원</option>
+                <option value="#">놀이의 발견</option>
+              </select>
+            </form>
+          </div>
+        </address>
+        <p class="copy">COPYRIGHT 2008 WOONGJIN CORPORATION ALL RIGHT RESERVED.</p>
+      </footer>
+    </section>
+
+    <!-- 풀페이지 퀵버튼 -->
+    <div class='quick'><ul></ul></div>
 
   </main>
 
+
   <!-- ------------푸터영역----------- -->
-  <footer>
-    <footer>
-      <a href="#" title="위로 바로가기" class="t_btn">
-        <img src="./images/top_up.png" alt="위로 바로가기">
-      </a>
-      <!-- 중앙 배치를 위한 영역 -->
-      <div class="footer_top">
-        <nav>
-          <dl>
-            <dt><a href="#" title="웅진소개">웅진소개</a></dt>
-            <dd><a href="#" title="CI">CI</a></dd>
-            <dd><a href="#" title="연혁">연혁</a></dd>
-          </dl>
-          <dl>
-            <dt><a href="#" title="계열사">계열사</a></dt>
-            <dd><a href="#" title="웅진IT">웅진IT</a></dd>
-            <dd><a href="#" title="웅진씽크빅">웅진씽크빅</a></dd>
-            <dd><a href="#" title="웅진북센">웅진북센</a></dd>
-            <dd><a href="#" title="렉스필드컨트리클럽">렉스필드컨트리클럽</a></dd>
-            <dd><a href="#" title="웅진플레이도시">웅진플레이도시</a></dd>
-            <dd><a href="#" title="웅진컴퍼스">웅진컴퍼스</a></dd>
-            <dd><a href="#" title="웅진헬스원">웅진헬스원</a></dd>
-            <dd><a href="#" title="놀이의 발견">놀이의 발견</a></dd>
-          </dl>
-          <dl>
-            <dt><a href="#" title="지속가능경영">지속가능경영</a></dt>
-            <dd><a href="#" title="웅진재단">웅진재단</a></dd>
-            <dd><a href="#" title="사회공헌">사회공헌</a></dd>
-            <dd><a href="#" title="윤리경영">윤리경영</a></dd>
-          </dl>
-          <dl>
-            <dt><a href="#" title="소식">소식</a></dt>
-            <dd><a href="#" title="공지사항">공지사항</a></dd>
-            <dd><a href="#" title="언론보도">언론보도</a></dd>
-            <dd><a href="#" title="홍보자료실">홍보자료실</a></dd>
-          </dl>
-          <dl>
-            <dt><a href="#" title="인재채용">인재채용</a></dt>
-            <dd><a href="#" title="인재상">인재상</a></dd>
-            <dd><a href="#" title="인사제도">인사제도</a></dd>
-            <dd><a href="#" title="직무소개">직무소개</a></dd>
-          </dl>
-        </nav>
-      </div>
-  
-      <address class="footer_btm">
+<!--   <footer>
+    <a href="#" title="위로 바로가기" class="t_btn">
+      <img src="./images/top_up.png" alt="위로 바로가기">
+    </a>
+    <div class="footer_top">
+      <nav>
+        <dl>
+          <dt><a href="#" title="웅진소개">웅진소개</a></dt>
+          <dd><a href="#" title="CI">CI</a></dd>
+          <dd><a href="#" title="연혁">연혁</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#" title="계열사">계열사</a></dt>
+          <dd><a href="#" title="웅진IT">웅진IT</a></dd>
+          <dd><a href="#" title="웅진씽크빅">웅진씽크빅</a></dd>
+          <dd><a href="#" title="웅진북센">웅진북센</a></dd>
+          <dd><a href="#" title="렉스필드컨트리클럽">렉스필드컨트리클럽</a></dd>
+          <dd><a href="#" title="웅진플레이도시">웅진플레이도시</a></dd>
+          <dd><a href="#" title="웅진컴퍼스">웅진컴퍼스</a></dd>
+          <dd><a href="#" title="웅진헬스원">웅진헬스원</a></dd>
+          <dd><a href="#" title="놀이의 발견">놀이의 발견</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#" title="지속가능경영">지속가능경영</a></dt>
+          <dd><a href="#" title="웅진재단">웅진재단</a></dd>
+          <dd><a href="#" title="사회공헌">사회공헌</a></dd>
+          <dd><a href="#" title="윤리경영">윤리경영</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#" title="소식">소식</a></dt>
+          <dd><a href="#" title="공지사항">공지사항</a></dd>
+          <dd><a href="#" title="언론보도">언론보도</a></dd>
+          <dd><a href="#" title="홍보자료실">홍보자료실</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#" title="인재채용">인재채용</a></dt>
+          <dd><a href="#" title="인재상">인재상</a></dd>
+          <dd><a href="#" title="인사제도">인사제도</a></dd>
+          <dd><a href="#" title="직무소개">직무소개</a></dd>
+        </dl>
+      </nav>
+    </div>
+    <address class="footer_btm">
+      <div class="btm_box">
         <h2>
-          <a href="index.html" title="메인페이지로 바로가기"></a>
-          <img src="https://dummyimage.com/300x80" alt="하단로고">
+          <a href="index.html" title="메인페이지로 바로가기">
+          <img src="./images/footer_logo.png" alt="하단로고"></a>
         </h2>
-        <ul>
-          <li>대표이사 : 이수영 </li>
-          <li>사업자등록번호 : 208-81-06344</li>
-          <li>주소 : 서울특별시 중구 청계천로 24, 6~9층, 16층(04521)</li>
-          <li><a href="#">웹접근성 정책 안내</a></li>
-          <li><a href="#">법적고지</a></li>
-          <li><a href="#">영상정보처리방침</a></li>
-          <li><a href="#">개인정보 처리방침</a></li>
-        </ul>
-  
-        <div class="footer-cont">
-          <form action="#">
-            <label for="site"></label>
-            <select name="family_site" id="site">
-              <option value="#">FAMILY SITE</option>
-              <option value="#">웅진IT</option>
-              <option value="#">웅진씽크빅</option>
-              <option value="#">웅진북센</option>
-              <option value="#">렉스필드컨트리클럽</option>
-              <option value="#">웅진플레이도시</option>
-              <option value="#">웅진컴퍼스</option>
-              <option value="#">웅진헬스원</option>
-              <option value="#">놀이의 발견</option>
-            </select>
-
-          </form>
-        <p>COPYRIGHT 2008 WOONGJIN CORPORATION ALL RIGHT RESERVED.</p>
-      </address>
-    </footer>
+        <div>
+          <ul>
+            <li>대표이사 : 이수영 </li>
+            <li>사업자등록번호 : 208-81-06344</li>
+            <li>주소 : 서울특별시 중구 청계천로 24, 6~9층, 16층(04521)</li>
+            <li><a href="#">웹접근성 정책 안내</a></li>
+            <li><a href="#">법적고지</a></li>
+            <li><a href="#">영상정보처리방침</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
+          </ul>
+        </div>
+        <form action="#">
+          <label for="site"></label>
+          <select name="family_site" id="site">
+            <option value="#">FAMILY SITE</option>
+            <option value="#">웅진IT</option>
+            <option value="#">웅진씽크빅</option>
+            <option value="#">웅진북센</option>
+            <option value="#">렉스필드컨트리클럽</option>
+            <option value="#">웅진플레이도시</option>
+            <option value="#">웅진컴퍼스</option>
+            <option value="#">웅진헬스원</option>
+            <option value="#">놀이의 발견</option>
+          </select>
+        </form>
+      </div>
+    </address>
+    <p class="copy">COPYRIGHT 2008 WOONGJIN CORPORATION ALL RIGHT RESERVED.</p>
   </footer>
+ -->
 
 
 
+  <!--js 연결 -->
+  <script src="./script/main.js"></script>
 
-
-
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- Initialize Swiper -->
-  <script>
-    //메인 슬라이드
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      effect: "fade",
-      speed:800,   //부드럽게 사라지는 정도
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      slideActiveClass: 'on',
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-    });
-
-    //계열사 슬라이드
-    var swiper = new Swiper(".mySwiper2", {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {   //수정필요
-        delay: 4000,
-        disableOnInteraction: false,
-      }
-    });
-
-
-    //웅진소식 슬라이드
-    var swiper = new Swiper(".mySwiper3", {
-            slidesPerView: 5,
-            spaceBetween: 50,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          });
-
-
-  </script>
 </body>
 </html>

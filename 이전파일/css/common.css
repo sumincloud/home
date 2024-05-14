@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+/* 프리텐다드 폰트 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+body{
+  font-family: 'pretendard', "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+a{color: var(--text_color_1);text-decoration: none;}
+
+
+
+/* 공통서식 */
+:root{
+  --main_color_1:#FF8F00;
+  --main_color_2:#ffd105;
+  --main_color_3:#89C824;
+
+  --sub_color_1:#E61A23;
+  --sub_color_2:#009DDC;
+
+  --text_color_1:#333;
+
+  --container_size:62.5%;
+
+  --font_size_1:3.125rem;  /* 50px */
+  --font_size_2:1.875rem;  /* 30px */
+  --font_size_3:1.25rem;  /* 20px */
+  --font_size_4:1.125rem;  /* 18px */
+  --font_size_5:1rem;  /* 16px */
+  --font_size_6:0.875rem;  /* 14px */
+  --font_size_7:0.813rem;  /* 13px */
+
+  --swiper-theme-color: #333333 !important;
+}
+
+
+/* --------------헤더서식------------ */
+header{
+  width: 100%;height: 100px;
+  background: pink;
+  position: fixed;
+  z-index: 100;
+  overflow: hidden;  /* 일단 숨겨놓음 */
+}
+.h_inner{
+  background: palevioletred;
+  width: 100%; height: 100px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+}
+
+/* 상단로고 */  
+.logo{
+  height: 100px;
+  z-index: 500;
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  left: 3%;
+  width: 13%;
+
+  
+}
+.logo img{
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+
+
+/* 메인메뉴 */
+.gnb_box{position: relative; z-index: 700;}
+.gnb{
+  display: flex;
+}
+.gnb > li{
+  text-align: center;
+  background: lightgreen;
+  width: 100%;
+}
+.gnb > li > a{
+  line-height: 100px;
+  white-space: nowrap; /* 글씨 줄바꿈 방지 */
+  display: block;
+}
+
+/* 서브메뉴 */
+
+.lnb > li{
+  line-height: 40px;
+  background: green;
+}
+.lnb > li > a{white-space: nowrap;}
+
+/* util */
+.util{
+  display: flex;
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  right: 3%;
+
+}
+.util div{
+  width: 60px;height: 30px;
+  background: white;
+  border: 2px solid #000;
+}
+
+
+
+
+
+
+/* --------------메인서식------------ */
+
+
+
+
+
+/* --------------푸터서식------------ */
+footer{
+  background: #333;
+  height: 560px;
+}
+/* 푸터 탑 서식 */
+.footer_top{
+  background: white; 
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+  height: 380px;
+  position: relative;
+}
+
+.footer_top > nav{
+  display: table; /* 테이블 속성으로 지정 */
+  border-collapse: collapse;
+  width: var(--container_size);
+  margin: 0 auto;
+  justify-content: space-between;
+  height: 100%;
+}
+.footer_top dl{
+  display: table-cell;  /* 테이블 속성으로 지정 */
+  line-height: 30px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: 20%;
+  padding: 30px 0 0 50px;
+}
+.footer_top a{
+  text-decoration: none;
+}
+.footer_top dl dt{
+  font-weight: 600;
+}
+
+
+/* 푸터 바텀 서식 */
+.footer_btm{
+  position: relative;
+  width: 1200px;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 120px;
+}
+.btm_box{
+  display: flex;
+  position: absolute;
+  top: 50%;transform: translateY(-50%);
+  margin-top: 20px;
+}
+.btm_box h2{width: 200px;height: 54px;}
+.btm_box h2 img{width: 100%;}
+
+.btm_box div{height: 80px;margin-left: 20px;}
+.btm_box ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+.btm_box li{
+  color: white;
+  font-weight: 100;
+  line-height: 180%;
+}
+.btm_box li a{
+  color: white;
+}
+.btm_box li::after {   /* 글자 옆 | 표시 */
+  content: '';
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 1px;
+  height: var(--font_size_6);
+  background-color: white;
+}
+.btm_box li:nth-of-type(3):after {display: none;}
+.btm_box li:nth-of-type(7):after {display: none;}
+
+#site{
+  width: 130px;height: 25px;
+}
+.copy{text-align: center;color: white;font-weight: 100;}
+
+
+
+
+
+/* 탑버튼 서식 */
+.t_btn{
+  position: fixed;
+  right: 80px;bottom: 80px;
+  z-index: 300;
+  background: white;
+  border-radius: 50%;
+  width: 40px;height: 40px;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.t_btn > img{
+  margin: 0 auto;
+  width: 60%;
+  margin-top: 6px;
+}
+.t_btn:hover{filter: brightness(0.8);}

@@ -1,9 +1,12 @@
 @charset "utf-8";
 
+
+
+
 /* 공통서식 */
 :root{
   --main_color_1:#FF8F00;
-  --main_color_2:#FFE605;
+  --main_color_2:#ffd105;
   --main_color_3:#89C824;
 
   --sub_color_1:#E61A23;
@@ -18,27 +21,39 @@
   --font_size_3:1.25rem;  /* 20px */
   --font_size_4:1.125rem;  /* 18px */
   --font_size_5:1rem;  /* 16px */
+  --font_size_6:0.875rem;  /* 14px */
+  --font_size_7:0.813rem;  /* 13px */
 
   --swiper-theme-color: #333333 !important;
 
 }
 
 /* -----메인 컨텐츠 공통 사이즈----- */
-main article{height: auto;background: lightblue;padding-top: 200px;}
+#fullpage{height: 100%;} /* 풀페이지 스크롤되게 top 기준점 설정 */
+.fullsection{
+  background: lightblue;
+  height: 100%;
+}
+#fullpage .inner1200{
+  box-sizing: border-box;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
 .inner1200{
   width: var(--container_size);margin: 0 auto;
   background: skyblue;
 }
+.fullsection .inner1200{padding-top: 130px;}
+
 .title dt{font-size: var(--font_size_1);font-weight: 600;}
 .title dd{font-size: var(--font_size_3);margin-top: 30px;line-height: 160%;}
 
 .sub_title dt{font-size: var(--font_size_2);font-weight: 600;}
-.sub_title dd{font-size: var(--font_size_4);margin-top: 30px;line-height: 160%;}
+.sub_title dd{font-size: var(--font_size_4);margin-top: 20px;line-height: 160%;}
 
 .more{font-size: var(--font_size_3);margin-top: 70px;}
 img{display: block;}
-
-
 
 
 
@@ -47,7 +62,6 @@ img{display: block;}
   position: relative;height: 100vh; background: orange;padding-top: 0;
 }
 .mySwiper{
-  width: 100%;
   height: 100%;
 }
 .swiper-slide{
@@ -60,18 +74,141 @@ img{display: block;}
   display: block;
 }
 
-/* 2.웅진소개 */
-.intro{padding-top: 250px;}
-.intro section{display: flex;justify-content: space-between;}
 
+
+
+/* 2.웅진소개 */
+.intro article{display: flex;justify-content: space-between;}
+.intro img{height: 70vh;}
+
+  /* 회전서클 */
+  .intro_box{
+    background: pink;
+    width: 70vh;
+    height: 70vh;position:relative;
+  }
+  .intro_box > .circle{
+      border:1px solid #333;
+      width: 90%;
+      height: 90%;
+      border-radius:50%;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+  }
+  .intro_box > .cir_box{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+  }
+  .cir_box > div{
+      position:relative;
+      width: 35%;
+      height: 35%;
+      border-radius:50%;
+      border: 1px dashed #333;
+  }
+  .cir_box div:nth-child(1){
+    position: absolute;
+    top: 0;left: 0;
+  }
+  .cir_box div:nth-child(2){
+    position: absolute;
+    top: 0;right: 0;
+  }
+  .cir_box div:nth-child(3){
+    position: absolute;
+    bottom: 0;left: 0;
+  }
+  .cir_box div:nth-child(4){
+    bottom: 0;right: 0;
+    position: absolute;
+  }
+
+  .cir_box > div > div{
+    width: 90%;
+    height: 90%;
+    border-radius:50%;
+    font-size: var(--font_size_3);
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .cir_box span{
+    text-align: center;
+    display: block;
+  }
+
+
+  .cir_box div:nth-child(1) > div{background: var(--main_color_2);}
+  .cir_box div:nth-child(2) > div{background: var(--main_color_3);}
+  .cir_box div:nth-child(3) > div{background: var(--sub_color_1);}
+  .cir_box div:nth-child(4) > div{background: var(--sub_color_2);}
 
 
 /* 3. 계열사 */
 .group .title{text-align: center;}
-.mySwiper2{margin-top: 50px;}
-.mySwiper2 .swiper-slide{height: 450px;background: white;}
-.mySwiper2 .swiper-slide:nth-child(even){margin-top: 70px;}
 .group p{text-align: center;margin-top: 70px;}
+
+
+  /* 계열사 무한루프 슬라이드 */
+  .wrap { 
+    display: flex; 
+    overflow: hidden;
+    margin-top: 80px;
+  }
+  .wrap .rolling-list ul { 
+    display: flex;
+  }
+  .wrap .rolling-list ul li { 
+    width: 300px; 
+    height: 350px; 
+    box-sizing: border-box; 
+    border-radius: 20px; 
+    margin: 0 15px; /* 간격 */
+    display: flex; 
+    align-items: center; 
+    flex-shrink: 0; 
+    background: white;
+    overflow: hidden;
+  }
+  .wrap .rolling-list ul li:nth-child(even) {
+    margin-top: 50px;
+  }
+  .wrap .rolling-list div{
+    width: 100%;height: 100%;
+    object-fit: cover;}
+  .wrap .rolling-list img { 
+    width: 100%;height: 100%;
+  }
+  .wrap .rolling-list li:hover  {
+    cursor: pointer;
+    filter: brightness(0.5);
+  }
+
+  /* 계열사 무한루프 애니메이션 */
+  .rolling-list.original {
+    animation: rollingleft1 70s linear infinite;
+  }
+  .rolling-list.clone {
+    animation: rollingleft2 70s linear infinite;
+  }
+  @keyframes rollingleft1 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100%); }
+    50.01% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+  }
+  @keyframes rollingleft2 {
+    0% { transition: translateX(0); }
+    100% { transform: translateX(-200%); }
+  }
+
+
+
+
 
 
 
@@ -79,16 +216,19 @@ img{display: block;}
 .esg .title{text-align: center;}
 .esg .sub_title{margin-top: 30px;text-align: center;}
 .esg_list{display: flex;justify-content: space-between;margin-top: 50px;}
+.esg_list div{width: 300px;height: 300px;margin: 0 auto;}
+.esg_list div img{width: 100%;}
+
 .esg .more{text-align: center;}
 
 
 /* 5. 웅진의 소식 */
 .news{overflow: hidden;}
 .news > .inner1200{position: relative;}
+.news .title{display: flex;}
 .news .more{
-  position: absolute;
-  top: 0; left: 280px;
-  margin-top: 20px;
+  margin: 0;
+  line-height: var(--font_size_1);
 }
 
   /* 웅진소식 슬라이드 스와이퍼 서식 */
@@ -169,15 +309,21 @@ img{display: block;}
   }
 
 /* 6. 인재채용 서식 */
-.recruit{margin-bottom: 100px;}
+/* .recruit{margin-bottom: 100px;} */
 .recruit .title{text-align: center;}
-.recruit_list{display: flex;justify-content: space-between;}
+.recruit_list{
+  display: flex;justify-content: space-between;
+  margin-top: 50px;
+}
 .recruit_list li{
-  background: lightgoldenrodyellow;
   width: 380px;
-  height: 480px;
+  height: 400px;
   position: relative;
 }
+.recruit_list li:nth-of-type(1){background: var(--main_color_2);}
+.recruit_list li:nth-of-type(2){background: var(--main_color_3);}
+.recruit_list li:nth-of-type(3){background: var(--sub_color_2);}
+
 .recruit_list li > div{
   display: inline-block;
   position: absolute;
@@ -185,8 +331,11 @@ img{display: block;}
   text-align: center;
   width: 300px;
 }
-.recruit_list li div img{display: inline-block;}
-.recruit_list .sub_title{margin-top: 30px;}
+.recruit_list li div img{
+  display: inline-block;
+  width: 100px;height: 100px;
+}
+.recruit_list .sub_title{margin-top: 30px;color: white;}
 .recruit_btn{
   width: 60px;height: 60px;
   border-radius: 50%;
@@ -196,3 +345,88 @@ img{display: block;}
 }
 .recruit .more{text-align: center;margin-top: 70px;}
 
+
+/* 7. 푸터서식 */
+.full7{height: auto !important;}
+footer{
+  background: #333;
+  height: 560px;
+}
+/* 푸터 탑 서식 */
+.footer_top{
+  background: white; 
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+  height: 380px;
+  position: relative;
+}
+
+.footer_top > nav{
+  display: table; /* 테이블 속성으로 지정 */
+  border-collapse: collapse;
+  width: var(--container_size);
+  margin: 0 auto;
+  justify-content: space-between;
+  height: 100%;
+}
+.footer_top dl{
+  display: table-cell;  /* 테이블 속성으로 지정 */
+  line-height: 30px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: 20%;
+  padding: 30px 0 0 50px;
+}
+.footer_top a{
+  text-decoration: none;
+}
+.footer_top dl dt{
+  font-weight: 600;
+}
+
+
+/* 푸터 바텀 서식 */
+.footer_btm{
+  position: relative;
+  width: 1200px;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 120px;
+}
+.btm_box{
+  display: flex;
+  position: absolute;
+  top: 50%;transform: translateY(-50%);
+  margin-top: 20px;
+}
+.btm_box h2{width: 200px;height: 54px;}
+.btm_box h2 img{width: 100%;}
+
+.btm_box div{height: 80px;margin-left: 20px;}
+.btm_box ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+.btm_box li{
+  color: white;
+  font-weight: 100;
+  line-height: 180%;
+}
+.btm_box li a{
+  color: white;
+}
+.btm_box li::after {   /* 글자 옆 | 표시 */
+  content: '';
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 1px;
+  height: var(--font_size_6);
+  background-color: white;
+}
+.btm_box li:nth-of-type(3):after {display: none;}
+.btm_box li:nth-of-type(7):after {display: none;}
+
+#site{
+  width: 130px;height: 25px;
+}
+.copy{text-align: center;color: white;font-weight: 100;}
