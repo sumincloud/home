@@ -110,12 +110,45 @@ header{
 
 /* util */
 .util{
-  display: flex;margin-right: 3%;
+  display: flex; margin-right: 3%;
   position: relative;
-  top: 50%;transform: translateY(-50%);
-  width: 260px;height: 30px;
+  width: 260px;height: 100%;
 }
-.util div{width: 60px;height: 30px;background: white; border: 2px solid #000;}
+.util .qna{
+  width: 100px;height: 40px;
+  background: var(--main_color_1);
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;transform: translateY(-50%);
+}
+.util .qna a{text-align: center;line-height: 40px;display: block; color: white;}
+.util .lang{
+  width: 100px;height: 40px;
+  background: white;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;transform: translateY(-50%);
+  right: 0;
+  border: 1px solid var(--main_color_1);
+}
+.util .lang select{
+  color: var(--main_color_1);
+  font-size: var(--font_size_5);
+  text-align: center;
+  background: url(../images/angle-down-solid.svg) no-repeat 95% 50%/var(--font_size_5) auto;
+  width: 100px;height: 40px;
+  border: 0;
+}
+/* select 기본 화살표 제거후 새로 삽입 */
+.util .lang select::-ms-expand { 
+	display: none;
+}
+.util .lang select{
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
 
 

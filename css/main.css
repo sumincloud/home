@@ -104,17 +104,31 @@ img{display: block;}
       transform: translate(-50%,-50%);
   }
   .cir_box > div{
-      position:relative;
+      position:absolute;
       width: 30%;
       height: 30%;
       border-radius:50%;
       border: 1px dashed #333;
-  }
+      animation:rot 10s linear infinite;
+      transform-origin:50% 50%;
+    }
+    
+    @keyframes rot{
+      0%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+  
+
   .cir_box div:nth-child(1){   /* 배치가 되긴 했는데 왜된지 모르겠음 */
     float: left;
   }
   .cir_box div:nth-child(2){
-    float: right;
+    position: absolute;
+    top: 0; right: 0;
   }
   .cir_box div:nth-child(3){
     position: absolute;
@@ -127,10 +141,11 @@ img{display: block;}
   .cir_box div:nth-child(5){
     width: 50%; height: 50%;
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
+    top: 25%; left: 25%;
+    animation:rot 10s linear infinite;
+    transform-origin:50% 50%;
   }
-  .cir_box div div{
+  .cir_box div div{    /* 이 부분 원이 안돌아가게 해야함 */
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
@@ -138,6 +153,9 @@ img{display: block;}
     height: 90%;
     border-radius:50%;
   }
+
+
+
   .cir_box div:nth-child(5) div{
     width: 94%;
     height: 94%;
@@ -153,6 +171,7 @@ img{display: block;}
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
   }
+
 
 
   .cir_box div:nth-child(1) > div{background: var(--main_color_2);}
