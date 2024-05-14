@@ -260,7 +260,7 @@ $html.animate({scrollTop:0},10);
 
 //스크롤 하는 함수
 $(window).on("wheel", function(e){
-  if(page==1){
+  if(page==1||page==lastPage){
     $('.quick').fadeOut(300)
   }else{
     $('.quick').fadeIn(300)

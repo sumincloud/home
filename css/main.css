@@ -105,18 +105,16 @@ img{display: block;}
   }
   .cir_box > div{
       position:relative;
-      width: 35%;
-      height: 35%;
+      width: 30%;
+      height: 30%;
       border-radius:50%;
       border: 1px dashed #333;
   }
-  .cir_box div:nth-child(1){
-    position: absolute;
-    top: 0;left: 0;
+  .cir_box div:nth-child(1){   /* 배치가 되긴 했는데 왜된지 모르겠음 */
+    float: left;
   }
   .cir_box div:nth-child(2){
-    position: absolute;
-    top: 0;right: 0;
+    float: right;
   }
   .cir_box div:nth-child(3){
     position: absolute;
@@ -126,19 +124,34 @@ img{display: block;}
     bottom: 0;right: 0;
     position: absolute;
   }
-
-  .cir_box > div > div{
+  .cir_box div:nth-child(5){
+    width: 50%; height: 50%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .cir_box div div{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
     width: 90%;
     height: 90%;
     border-radius:50%;
-    font-size: var(--font_size_3);
-    font-weight: bold;
-    color: #fff;
+  }
+  .cir_box div:nth-child(5) div{
+    width: 94%;
+    height: 94%;
   }
 
   .cir_box span{
     text-align: center;
     display: block;
+    font-size: var(--font_size_3);
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
   }
 
 
@@ -146,6 +159,7 @@ img{display: block;}
   .cir_box div:nth-child(2) > div{background: var(--main_color_3);}
   .cir_box div:nth-child(3) > div{background: var(--sub_color_1);}
   .cir_box div:nth-child(4) > div{background: var(--sub_color_2);}
+  .cir_box div:nth-child(5) > div{background: var(--main_color_1)}
 
 
 /* 3. 계열사 */
@@ -229,6 +243,8 @@ img{display: block;}
 .news .more{
   margin: 0;
   line-height: var(--font_size_1);
+  position: relative;
+  left: -280px; top: 10px;
 }
 
   /* 웅진소식 슬라이드 스와이퍼 서식 */
@@ -252,8 +268,8 @@ img{display: block;}
     display: none !important;
   }
   .swiper-button-prev{
-    position: absolute !important;
-    left: 1110px !important;
+    position: relative;
+    left: 1020px !important;
   }
 
   /* 웅진소식 컨텐츠 서식 */
