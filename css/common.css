@@ -12,6 +12,7 @@ html,body{width:100%;height:100%;}
 body{
   font-family: 'pretendard', "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
   overflow-y: hidden;
+  color: var(--text_color_1);
 }
 a{color: var(--text_color_1);text-decoration: none;}
 
@@ -45,9 +46,10 @@ a{color: var(--text_color_1);text-decoration: none;}
   position:fixed;
   left:3%;top:50%;transform:translateY(-50%);
   z-index:100000;
+  display: none;
 }
 .quick li{
-  width:4px;height:80px;
+  width:6px;height:80px;
   background: #ccc;
   cursor:pointer;
 }
@@ -64,7 +66,7 @@ header{
   position: fixed;
   z-index: 100;
   overflow: hidden;
-  background: rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.5);
 }
 .h_inner{
   width: 100%; height: 100px;
@@ -90,55 +92,141 @@ header{
 .gnb > li{
   text-align: center;
   width: 100%;
+  margin: 0 auto;
 }
 .gnb > li > a{
   line-height: 100px;
   white-space: nowrap; /* 글씨 줄바꿈 방지 */
-  padding: 0 50px; /* 글씨 최소 좌우 패딩값 */
+  color: var(--text_color_1);
+  font-weight: bolder;
+  text-align: center;
   display: block;
-  color: white;
+  width: 100%;
+  margin: 0 auto;
 }
 
+/* 호버시 밑줄 나오게 */
+.gnb > li > a::after {
+  content: " ";
+  display: block;
+  margin-top: -3px;
+  width: 100%;
+  transform: scaleX(0);
+  transition: 0.8s;
+}
+.gnb > li:nth-of-type(1) > a::after{
+  border-bottom: 3px solid var(--main_color_1);
+}
+.gnb > li:nth-of-type(2) > a::after{
+  border-bottom: 3px solid var(--main_color_2);
+}
+.gnb > li:nth-of-type(3) > a::after{
+  border-bottom: 3px solid var(--main_color_3);
+}
+.gnb > li:nth-of-type(4) > a::after{
+  border-bottom: 3px solid var(--sub_color_1);
+}
+.gnb > li:nth-of-type(5) > a::after{
+  border-bottom: 3px solid var(--sub_color_2);
+}
+.gnb > li:hover > a::after{
+  transform: scaleX(1);
+}
+
+
+
 /* 서브메뉴 */
-.lnb{margin: 20px 0 20px 0;}   /* 서브메뉴 위아래 여백 */
+.lnb{
+  margin: 20px 0 20px 0;
+}   /* 서브메뉴 위아래 여백 */
 .lnb > li{
   line-height: 40px;
+  width: 100%;
 }
 .lnb > li > a{
   white-space: nowrap;
+  text-align: center;
+  width: 180px;
 }
-
+.lnb > li > a:hover{
+  text-decoration: underline;
+}
 /* util */
 .util{
   display: flex; margin-right: 3%;
   position: relative;
   width: 260px;height: 100%;
+  padding: 30px 0 30px 0;
 }
 .util .qna{
   width: 100px;height: 40px;
   background: var(--main_color_1);
   border-radius: 20px;
-  position: absolute;
-  top: 50%;transform: translateY(-50%);
+  margin-right:30px;
+  border: 1px solid var(--main_color_1);
 }
+.util .qna:hover{
+  background: white;
+  border: 1px solid var(--main_color_1);
+}
+
 .util .qna a{text-align: center;line-height: 40px;display: block; color: white;}
-.util .lang{
+.util .qna a:hover{
+  color: var(--main_color_1);
+}
+
+
+.util .select{
+  color: var(--main_color_1);
+  line-height: 40px;
+}
+.util .selected{
   width: 100px;height: 40px;
   background: white;
   border-radius: 20px;
-  position: absolute;
-  top: 50%;transform: translateY(-50%);
-  right: 0;
+  border: 1px solid var(--main_color_1);
+  display: flex;
+  justify-content: center;
+}
+.util .selected:hover{
+  background: var(--main_color_1);
+  color: white;
+  cursor: pointer;
   border: 1px solid var(--main_color_1);
 }
-.util .lang select{
-  color: var(--main_color_1);
-  font-size: var(--font_size_5);
-  text-align: center;
-  background: url(../images/angle-down-solid.svg) no-repeat 95% 50%/var(--font_size_5) auto;
-  width: 100px;height: 40px;
-  border: 0;
+.util .selected:hover .arrow{
+  width: 20px;
+  background: url("../images/angle_down_wh.svg") no-repeat 50%;
+  background-size: 65%;
+  margin-left: 2px;
 }
+.util .selected .arrow{
+  width: 20px;
+  background: url("../images/angle_down_oran.svg") no-repeat 50%;
+  background-size: 65%;
+  margin-left: 2px;
+}
+.util ul{
+  position: fixed;
+  display: none; /* 처음엔 옵션 안보이게 */
+}
+.util .option{
+  width: 100px;height: 40px;
+  background: var(--main_color_1);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  border: 1px solid var(--main_color_1);
+}
+.util .option:hover{
+  cursor: pointer;
+  background: white;
+  color: var(--main_color_1);
+  border: 1px solid var(--main_color_1);
+}
+
+
+
 /* select 기본 화살표 제거후 새로 삽입 */
 .util .lang select::-ms-expand { 
 	display: none;
@@ -176,6 +264,7 @@ header{
   width: 40px;height: 40px;
   text-align: center;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  display: none;
 }
 .t_btn > img{
   margin: 0 auto;

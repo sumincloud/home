@@ -1,0 +1,17 @@
+
+@media (max-width: 768px){
+  body{background-color: #cfc;}
+
+
+
+
+
+
+
+}
+
+
+
+@media (max-width: 375px){
+  body{background-color: rgb(207, 187, 255);}
+}

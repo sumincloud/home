@@ -31,7 +31,7 @@
 /* -----메인 컨텐츠 공통 사이즈----- */
 #fullpage{height: 100%;} /* 풀페이지 스크롤되게 top 기준점 설정 */
 .fullsection{
-  background: lightblue;
+  /* background: lightblue; */
   height: 100%;
 }
 #fullpage .inner1200{
@@ -42,9 +42,9 @@
 
 .inner1200{
   width: var(--container_size);margin: 0 auto;
-  background: skyblue;
+  /* background: skyblue; */
 }
-.fullsection .inner1200{padding-top: 130px;}
+.fullsection .inner1200{padding-top: 140px;}
 
 .title dt{font-size: var(--font_size_1);font-weight: 600;}
 .title dd{font-size: var(--font_size_3);margin-top: 30px;line-height: 160%;}
@@ -52,7 +52,18 @@
 .sub_title dt{font-size: var(--font_size_2);font-weight: 600;}
 .sub_title dd{font-size: var(--font_size_4);margin-top: 20px;line-height: 160%;}
 
-.more{font-size: var(--font_size_3);margin-top: 70px;}
+.more{text-align: center;}
+.more > a{
+  font-size: var(--font_size_3);
+  color: var(--text_color_1);
+  text-align: center;
+  display: inline-block;
+}
+.more > a:hover{
+  color: var(--main_color_1);
+  cursor: pointer;
+}
+
 img{display: block;}
 
 
@@ -80,13 +91,21 @@ img{display: block;}
 /* 2.웅진소개 */
 .intro article{display: flex;justify-content: space-between;}
 .intro img{height: 70vh;}
+.intro .more{text-align: left;margin-top: 70px;}
 
   /* 회전서클 */
   .intro_box{
-    background: pink;
+    /* background: pink; */
     width: 70vh;
     height: 70vh;position:relative;
+    animation: dung 1s infinite alternate;
   }
+  /* 둥둥 애니메이션 */
+  @keyframes dung{
+    0%{transform:translate(0,0);}
+    100%{transform:translate(0,20px);}
+  } 
+
   .intro_box > .circle{
       border:1px solid #333;
       width: 90%;
@@ -95,6 +114,7 @@ img{display: block;}
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%,-50%);
+      filter: drop-shadow(0px 0px 4px #b3b3b3)
   }
   .intro_box > .cir_box{
       position: absolute;
@@ -102,6 +122,7 @@ img{display: block;}
       height: 100%;
       top: 50%; left: 50%;
       transform: translate(-50%,-50%);
+      filter: drop-shadow(0px 0px 4px #b3b3b3)
   }
   .cir_box > div{
       position:absolute;
@@ -111,6 +132,7 @@ img{display: block;}
       border: 1px dashed #333;
       animation:rot 10s linear infinite;
       transform-origin:50% 50%;
+
     }
     
     @keyframes rot{
@@ -145,35 +167,45 @@ img{display: block;}
     animation:rot 10s linear infinite;
     transform-origin:50% 50%;
   }
-  .cir_box div div{    /* 이 부분 원이 안돌아가게 해야함 */
+  .cir_box > div > div{    /* 이 부분 원이 안돌아가게 해야함 */
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
     width: 90%;
     height: 90%;
     border-radius:50%;
+    display: flex;
+    align-items: center
   }
-
-
-
+  
+  
   .cir_box div:nth-child(5) div{
     width: 94%;
     height: 94%;
   }
 
-  .cir_box span{
-    text-align: center;
-    display: block;
+  .cir_box p{
     font-size: var(--font_size_3);
     font-weight: bold;
     color: #fff;
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 100%;
   }
-
-
-
+  .cir_box p{
+    animation: no_rot 10s linear infinite;
+  }
+  @keyframes no_rot{
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(-360deg);
+    }
+  }
+  
+  
+  
   .cir_box div:nth-child(1) > div{background: var(--main_color_2);}
   .cir_box div:nth-child(2) > div{background: var(--main_color_3);}
   .cir_box div:nth-child(3) > div{background: var(--sub_color_1);}
@@ -183,7 +215,7 @@ img{display: block;}
 
 /* 3. 계열사 */
 .group .title{text-align: center;}
-.group p{text-align: center;margin-top: 70px;}
+.group .more{margin-top: 70px;}
 
 
   /* 계열사 무한루프 슬라이드 */
@@ -191,11 +223,15 @@ img{display: block;}
     display: flex; 
     overflow: hidden;
     margin-top: 80px;
+
   }
   .wrap .rolling-list ul { 
     display: flex;
+    height: 410px;
+    padding-top: 8px; /* 그림자 영역만큼 띄워줌 */
   }
   .wrap .rolling-list ul li { 
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
     width: 300px; 
     height: 350px; 
     box-sizing: border-box; 
@@ -206,28 +242,71 @@ img{display: block;}
     flex-shrink: 0; 
     background: white;
     overflow: hidden;
+    position: relative;
   }
   .wrap .rolling-list ul li:nth-child(even) {
     margin-top: 50px;
   }
-  .wrap .rolling-list div{
+  .wrap .rolling-list div:nth-of-type(1){
     width: 100%;height: 100%;
     object-fit: cover;}
   .wrap .rolling-list img { 
     width: 100%;height: 100%;
   }
-  .wrap .rolling-list li:hover  {
+
+  .wrap .rolling-list li:hover{
     cursor: pointer;
+  }
+  .wrap .rolling-list li:hover img{
     filter: brightness(0.5);
   }
+
+/* 호버시 계열사 버튼 생김 */
+.group_btn{
+  width: 200px; height: 200px;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.group_btn > p{
+  text-align: center;
+  font-size: var(--font_size_3);
+  font-weight: 600;
+  line-height: 60px;
+  height: 60px;
+  background: white;
+  display: inline-block;
+  min-width: 120px;
+  padding: 0 20px 0 20px;
+  border-radius: 30px;
+  position: absolute;
+  top: 30px; transform: translateX(-50%);
+  text-wrap: nowrap;
+  box-sizing: border-box;
+}
+.group_btn > div{
+  width: 50px !important;height: 50px !important;
+  border-radius: 50%;
+  background: white;
+  display: inline-block;
+  position: absolute;
+  bottom: 30px; transform: translateX(-50%);
+}
+.group_btn > div > i{
+  font-size: var(--font_size_3);
+  line-height: 50px;
+}
 
   /* 계열사 무한루프 애니메이션 */
   .rolling-list.original {
     animation: rollingleft1 70s linear infinite;
+    margin-left: 300px;
   }
   .rolling-list.clone {
     animation: rollingleft2 70s linear infinite;
   }
+
   @keyframes rollingleft1 {
     0% { transform: translateX(0); }
     50% { transform: translateX(-100%); }
@@ -241,18 +320,24 @@ img{display: block;}
 
 
 
-
-
-
-
 /* 4. 지속가능경영 */
 .esg .title{text-align: center;}
 .esg .sub_title{margin-top: 30px;text-align: center;}
 .esg_list{display: flex;justify-content: space-between;margin-top: 50px;}
-.esg_list div{width: 300px;height: 300px;margin: 0 auto;}
+.esg_list div{width: 300px;height: 300px;margin: 0 auto;overflow: hidden;}
+.esg_list li:nth-of-type(1) > div{border-radius: 150px 0 0 0;}
+.esg_list li:nth-of-type(2) > div{border-radius: 0;}
+.esg_list li:nth-of-type(3) > div{border-radius: 0 0 150px 0;}
+
+.esg_list div:hover{
+  border-radius: 50% !important;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 .esg_list div img{width: 100%;}
 
-.esg .more{text-align: center;}
+.esg .more{text-align: center;margin-top: 70px;}
 
 
 /* 5. 웅진의 소식 */
@@ -275,13 +360,18 @@ img{display: block;}
   }
   .mySwiper3 .swiper-slide{
     margin-top: 10px;
+    margin-left: 6px;
     height: 410px;
+    box-shadow: 0px 0px 6px gray;
   }
   .swiper-btn{
     position: relative;
     display: flex !important;
     top: -516px; right: 0px;
     font-size: var(--font_size_2);
+  }
+  .swiper-button-prev:hover, .swiper-button-next:hover{
+    color: var(--main_color_1) !important;
   }
   .swiper-button-prev:after, .swiper-button-next:after {
     display: none !important;
@@ -301,7 +391,7 @@ img{display: block;}
     cursor: pointer;
   }
   .news_con:hover{
-    background: var(--main_color_1);
+    /* background: var(--main_color_1); */
     box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
     position: relative;
     top: -5px;
@@ -351,9 +441,13 @@ img{display: block;}
   margin-top: 50px;
 }
 .recruit_list li{
-  width: 380px;
+  width: 350px;
   height: 400px;
   position: relative;
+  border-radius: 30px;
+}
+.recruit_list li:hover{
+  cursor: pointer;
 }
 .recruit_list li:nth-of-type(1){background: var(--main_color_2);}
 .recruit_list li:nth-of-type(2){background: var(--main_color_3);}
@@ -375,9 +469,19 @@ img{display: block;}
   width: 60px;height: 60px;
   border-radius: 50%;
   background: white;
-  display: inline-block;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
+  display: none;
 }
+.recruit_btn i{
+  line-height: 60px;
+  font-size: var(--font_size_2);
+}
+.recruit_list li:nth-of-type(1) i{color: var(--main_color_2);}
+.recruit_list li:nth-of-type(2) i{color: var(--main_color_3);}
+.recruit_list li:nth-of-type(3) i{color: var(--sub_color_2);}
+
+
+
 .recruit .more{text-align: center;margin-top: 70px;}
 
 
@@ -420,6 +524,9 @@ footer{
 
 
 /* 푸터 바텀 서식 */
+address{
+  font-style: normal;
+}
 .footer_btm{
   position: relative;
   width: 1200px;
@@ -440,11 +547,15 @@ footer{
 .btm_box ul{
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 .btm_box li{
   color: white;
   font-weight: 100;
   line-height: 180%;
+}
+.btm_box li:nth-of-type(3){
+  width:50%;
 }
 .btm_box li a{
   color: white;
@@ -461,7 +572,15 @@ footer{
 .btm_box li:nth-of-type(3):after {display: none;}
 .btm_box li:nth-of-type(7):after {display: none;}
 
+
 #site{
-  width: 130px;height: 25px;
+  width: 150px;height: 25px;
+  background: none;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+#site option{
+  color: var(--text_color_1);
 }
 .copy{text-align: center;color: white;font-weight: 100;}
