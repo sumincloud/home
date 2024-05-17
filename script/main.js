@@ -213,8 +213,21 @@ $(document).ready(function(){
       $('body').children().css('width','100%')
     }else if(screenWidth>768){
       $('body').children().css('width','1200px')
-    }else{
+      //768이상일때 메인이미지 사이즈 변경
+      $('#img1').attr('src','./images/main1.png')
+      $('#img2').attr('src','./images/main2.png')
+      $('#img3').attr('src','./images/main3.png')
+    }else if(screenWidth>375){
       $('body').children().css('width','100%')
+      //768~375일때 메인이미지 사이즈 변경
+      $('#img1').attr('src','./images/ta_main1.png')
+      $('#img2').attr('src','./images/ta_main2.png')
+      $('#img3').attr('src','./images/ta_main3.png')
+    }else{
+      //375이하일때 메인이미지 사이즈 변경
+      $('#img1').attr('src','./images/mo_main1.png')
+      $('#img2').attr('src','./images/mo_main2.png')
+      $('#img3').attr('src','./images/mo_main3.png')
     }
   }
   screen();

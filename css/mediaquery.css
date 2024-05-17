@@ -13,13 +13,30 @@
 
 @media (max-width: 768px){
   body{background-color: #cfc;}
+  /* --------------헤더서식------------ */
   .gnb{display: none;}
   .util{display: none;}
   .logo{
     margin-left: 0%;
     left: 50%; transform: translate(-50%,-50%);
-    
   }
+  header{
+    background: white !important;
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  /* ---------메인 서식-------------- */
+  .inner1200{
+    width: 100%;
+  }
+
+  .intro article{display: block}
+
+
+  .esg_list{display: block;}
+
+  .footer_top > nav{width: 100%;}
+  .footer_btm{width: 100%;}
 
 
 
