@@ -1,3 +1,31 @@
+/* 공통서식 */
+:root{
+  --main_color_1:#FF8F00;
+  --main_color_2:#ffd105;
+  --main_color_3:#89C824;
+
+  --sub_color_1:#E61A23;
+  --sub_color_2:#009DDC;
+
+  --text_color_1:#333;
+
+  --container_size:1200px;
+
+  --font_size_1:3.125rem;  /* 50px */
+  --font_size_2:1.875rem;  /* 30px */
+  --font_size_3:1.25rem;  /* 20px */
+  --font_size_4:1.125rem;  /* 18px */
+  --font_size_5:1rem;  /* 16px */
+  --font_size_6:0.875rem;  /* 14px */
+  --font_size_7:0.813rem;  /* 13px */
+
+  --swiper-theme-color: #333333 !important;
+
+}
+
+
+
+
 /* 토글버튼 서식 */
 #toggle{
   width: 40px;height: 40px;
@@ -5,14 +33,15 @@
   text-align: center;
   line-height: 40px;
   font-size: 30px;
-  top: 30px; right: 5%;
+  top: 30px; right: 8%;
 }
 
 
 
-
+/* ------------------------태블릿 버전 서식----------------------- */
 @media (max-width: 768px){
   body{background-color: #cfc;}
+  .quick{display: none !important;}
   /* --------------헤더서식------------ */
   .gnb{display: none;}
   .util{display: none;}
@@ -25,16 +54,49 @@
     border-bottom: 1px solid #ccc !important;
   }
 
-  /* ---------메인 서식-------------- */
+  /* ---------메인서식----------- */
   .inner1200{
     width: 100%;
   }
+  .fullsection .inner1200{padding-top: 140px;}
+  .title dt{font-size: var(--font_size_2);text-align: center;}
+  .title dd{font-size: var(--font_size_4);text-align: center;}
 
-  .intro article{display: block}
+  .sub_title dt{font-size: var(--font_size_2);}
+  .sub_title dd{font-size: var(--font_size_4);}
+
+  .more > a{
+    font-size: var(--font_size_5);
+  }
 
 
+  /* 2. 웅진소개 */
+  .intro{position: relative;}
+  .intro article{display: block;}
+  .intro .more{
+    margin-top: 0px;
+    position: absolute; bottom: 50px;
+    left: 50%; transform: translateX(-50%);
+
+  }
+  .intro_box{
+    margin: 40px auto 0 auto;
+    width: 50vh;
+    height: 50vh;position:relative;
+    animation: dung 1s infinite alternate;
+  }
+
+
+
+
+
+
+  /* 3. 지속가능경영 */
   .esg_list{display: block;}
+  
 
+
+  /* 7. 푸터 */
   .footer_top > nav{width: 100%;}
   .footer_btm{width: 100%;}
 

@@ -179,7 +179,6 @@ $(document).ready(function(){
 
     //계열사 버튼 삽입하는 것
     let group_name = $(this).find('img').attr('alt');
-
     $(this).append("<div class='group_btn'><p>"+group_name+"</p><div><i class='fas fa-angle-right'></i></div></div>");
 
   },function(){  //마우스 뗐을때
@@ -213,18 +212,18 @@ $(document).ready(function(){
       $('body').children().css('width','100%')
     }else if(screenWidth>768){
       $('body').children().css('width','1200px')
-      //768이상일때 메인이미지 사이즈 변경
+      //768이상일때 메인이미지 사이즈 변경(pc)
       $('#img1').attr('src','./images/main1.png')
       $('#img2').attr('src','./images/main2.png')
       $('#img3').attr('src','./images/main3.png')
     }else if(screenWidth>375){
       $('body').children().css('width','100%')
-      //768~375일때 메인이미지 사이즈 변경
+      //768~375일때 메인이미지 사이즈 변경(태블릿)
       $('#img1').attr('src','./images/ta_main1.png')
       $('#img2').attr('src','./images/ta_main2.png')
       $('#img3').attr('src','./images/ta_main3.png')
     }else{
-      //375이하일때 메인이미지 사이즈 변경
+      //375이하일때 메인이미지 사이즈 변경(모바일)
       $('#img1').attr('src','./images/mo_main1.png')
       $('#img2').attr('src','./images/mo_main2.png')
       $('#img3').attr('src','./images/mo_main3.png')

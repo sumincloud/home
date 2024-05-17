@@ -36,8 +36,8 @@
 }
 #fullpage .inner1200{
   box-sizing: border-box;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .inner1200{
@@ -70,7 +70,7 @@ img{display: block;}
 
 /* 1. 메인 슬라이드 서식 */
 .slide{
-  position: relative;height: 100vh; background: orange;padding-top: 0;
+  position: relative;height: 100vh;padding-top: 0;
 }
 .mySwiper{
   height: 100%;
@@ -182,6 +182,9 @@ img{display: block;}
   .cir_box div:nth-child(5) div{
     width: 94%;
     height: 94%;
+  }
+  .cir_box div:nth-child(5) p{
+    font-size: var(--font_size_2);
   }
 
   .cir_box p{
@@ -301,7 +304,7 @@ img{display: block;}
   /* 계열사 무한루프 애니메이션 */
   .rolling-list.original {
     animation: rollingleft1 70s linear infinite;
-    margin-left: 300px;
+    /* margin-left: 300px; */
   }
   .rolling-list.clone {
     animation: rollingleft2 70s linear infinite;
@@ -342,7 +345,7 @@ img{display: block;}
 
 /* 5. 웅진의 소식 */
 .news{overflow: hidden;}
-.news > .inner1200{position: relative;}
+.news > .inner1200{position: relative; padding-top: 160px;}
 .news .title{display: flex;}
 .news .more{
   margin: 0;
@@ -367,7 +370,7 @@ img{display: block;}
   .swiper-btn{
     position: relative;
     display: flex !important;
-    top: -516px; right: 0px;
+    top: -516px; right: -100px;
     font-size: var(--font_size_2);
   }
   .swiper-button-prev:hover, .swiper-button-next:hover{
@@ -379,6 +382,10 @@ img{display: block;}
   .swiper-button-prev{
     position: relative;
     left: 1020px !important;
+  }
+  .swiper-button-next{
+    position: relative;
+    left: 1060px !important;
   }
 
   /* 웅진소식 컨텐츠 서식 */
