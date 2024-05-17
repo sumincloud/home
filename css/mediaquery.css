@@ -74,8 +74,7 @@
   .intro{position: relative;}
   .intro article{display: block;}
   .intro .more{
-    margin-top: 0px;
-    position: absolute; bottom: -60px;
+    position: absolute; bottom: -100px;
     left: 50%; transform: translateX(-50%);
 
   }
@@ -95,14 +94,19 @@
   .esg .title{width: 500px;margin: 0 auto;}
   .esg .title dd{text-wrap: wrap;}
   .esg_list{display: block;}
-  .esg_list li{height: 150px;}
-  
+  .esg_list li{height: 150px;margin-bottom: 30px;}
+
   .esg_list div{width: 100%;height: 150px;margin: 0 auto;overflow: hidden;}
   .esg_list li:nth-of-type(1) > div{border-radius: 150px 0 0 0;}
   .esg_list li:nth-of-type(2) > div{border-radius: 0;}
   .esg_list li:nth-of-type(3) > div{border-radius: 0 0 150px 0;}
 
-  .esg_list li .sub_title{position: relative; top: -150px;}
+  .esg_list li .sub_title{position: relative; top: -150px;color: white;}
+  .esg_list li .sub_title dt{font-size: 24px;}
+  .esg_list li .sub_title dd{font-size: var(--font_size_5); margin-top: 10px;}
+
+  .esg_list div img{position: relative; top: 50%;transform: translateY(-50%);filter: brightness(0.8);}
+  .esg_list li:nth-of-type(2) div img{top: 10px; left: 120px; transform: scale(1.6);}
   
 
 

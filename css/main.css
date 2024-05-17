@@ -31,7 +31,7 @@
 /* -----메인 컨텐츠 공통 사이즈----- */
 #fullpage{height: 100%;} /* 풀페이지 스크롤되게 top 기준점 설정 */
 .fullsection{
-  /* background: lightblue; */
+  background: lightblue;
   height: 100%;
 }
 #fullpage .inner1200{
@@ -42,7 +42,7 @@
 
 .inner1200{
   width: var(--container_size);margin: 0 auto;
-  /* background: skyblue; */
+  background: skyblue;
 }
 .fullsection .inner1200{padding-top: 140px;}
 
@@ -336,7 +336,7 @@ img{display: block;}
   cursor: pointer;
 }
 
-.esg_list div img{width: 100%;}
+.esg_list div img{width: 100%;height: 100%;object-fit: cover;}
 
 .esg .more{text-align: center;margin-top: 70px;}
 
