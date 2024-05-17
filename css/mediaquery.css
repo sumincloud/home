@@ -1,6 +1,25 @@
+/* 토글버튼 서식 */
+#toggle{
+  width: 40px;height: 40px;
+  position: fixed;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  top: 30px; right: 5%;
+}
+
+
+
 
 @media (max-width: 768px){
   body{background-color: #cfc;}
+  .gnb{display: none;}
+  .util{display: none;}
+  .logo{
+    margin-left: 0%;
+    left: 50%; transform: translate(-50%,-50%);
+    
+  }
 
 
 

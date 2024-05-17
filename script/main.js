@@ -211,8 +211,10 @@ $(document).ready(function(){
     if(screenWidth >= 1200){
       //body컨텐츠의 하위 자식요소들 전부 속성 변경
       $('body').children().css('width','100%')
-    }else{
+    }else if(screenWidth>768){
       $('body').children().css('width','1200px')
+    }else{
+      $('body').children().css('width','100%')
     }
   }
   screen();
