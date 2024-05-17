@@ -47,7 +47,7 @@
 .fullsection .inner1200{padding-top: 140px;}
 
 .title dt{font-size: var(--font_size_1);font-weight: 600;}
-.title dd{font-size: var(--font_size_3);margin-top: 30px;line-height: 160%;}
+.title dd{font-size: var(--font_size_3);margin-top: 30px;line-height: 160%;text-wrap: nowrap;}
 
 .sub_title dt{font-size: var(--font_size_2);font-weight: 600;}
 .sub_title dd{font-size: var(--font_size_4);margin-top: 20px;line-height: 160%;}
@@ -89,15 +89,13 @@ img{display: block;}
 
 
 /* 2.웅진소개 */
-.intro article{display: flex;justify-content: space-between;}
-.intro img{height: 70vh;}
+.intro article{display: flex;justify-content: space-between;position: relative;}
 .intro .more{text-align: left;margin-top: 70px;}
 
   /* 회전서클 */
   .intro_box{
-    /* background: pink; */
-    width: 70vh;
-    height: 70vh;position:relative;
+    width: 70vh;height: 70vh;position:absolute;
+    right: 0;
     animation: dung 1s infinite alternate;
   }
   /* 둥둥 애니메이션 */
@@ -217,6 +215,7 @@ img{display: block;}
 
 
 /* 3. 계열사 */
+.group{height: 100%;}
 .group .title{text-align: center;}
 .group .more{margin-top: 70px;}
 
@@ -224,9 +223,8 @@ img{display: block;}
   /* 계열사 무한루프 슬라이드 */
   .wrap { 
     display: flex; 
-    overflow: hidden;
     margin-top: 80px;
-
+    overflow: hidden;
   }
   .wrap .rolling-list ul { 
     display: flex;
