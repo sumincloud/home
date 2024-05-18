@@ -44,7 +44,7 @@ a{color: var(--text_color_1);text-decoration: none;}
 /* -----------------풀페이지 퀵버튼------------- */
 .quick{
   position:fixed;
-  left:3%;top:50%;transform:translateY(-50%);
+  left:40px;top:50%;transform:translateY(-50%);
   z-index:100000;
   display: none;
 }
@@ -82,7 +82,7 @@ header{
   position: relative;
   top: 50%;transform: translateY(-50%);
 }
-.logo img{height: 100%;}
+.logo img{height: 100%;margin: 0 auto;}
 
 /* 메인메뉴 */
 .gnb{

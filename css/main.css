@@ -26,25 +26,31 @@
 
   --swiper-theme-color: #333333 !important;
 
+  --full_h: 100%;
+
 }
 
 /* -----메인 컨텐츠 공통 사이즈----- */
 #fullpage{height: 100%;} /* 풀페이지 스크롤되게 top 기준점 설정 */
-.fullsection{
+.full2, .full3, .full4, .full5, .full6, .full7{
   background: lightblue;
-  height: 100%;
+  height: calc(var(--full_h) - 100px);
+  margin-top: 100px;
+  position: relative;box-sizing: border-box;
 }
 #fullpage .inner1200{
   box-sizing: border-box;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  position: absolute;top: 50%; left:50%; transform: translate(-50%,-50%);
 }
 
 .inner1200{
   width: var(--container_size);margin: 0 auto;
   background: skyblue;
 }
-.fullsection .inner1200{padding-top: 140px;}
+/* .fullsection .inner1200{padding-top: 140px;} */
 
 .title dt{font-size: var(--font_size_1);font-weight: 600;}
 .title dd{font-size: var(--font_size_3);margin-top: 30px;line-height: 160%;text-wrap: nowrap;}
@@ -89,12 +95,14 @@ img{display: block;}
 
 
 /* 2.웅진소개 */
-.intro article{display: flex;justify-content: space-between;position: relative;}
+.intro .inner1200{display: flex;justify-content: space-between;height: 70vh;}
 .intro .more{text-align: left;margin-top: 70px;}
+
 
   /* 회전서클 */
   .intro_box{
-    width: 70vh;height: 70vh;position:absolute;
+    width: 70vh;height: 70vh;
+    position: absolute;
     right: 0;
     animation: dung 1s infinite alternate;
   }
@@ -215,16 +223,17 @@ img{display: block;}
 
 
 /* 3. 계열사 */
-.group{height: 100%;}
+.group{overflow-x: hidden;}
+.group .inner1200{height: 75vh;}
 .group .title{text-align: center;}
-.group .more{margin-top: 70px;}
+.group .more{position: absolute; bottom: 0;left: 50%;transform: translateX(-50%);}
 
 
   /* 계열사 무한루프 슬라이드 */
   .wrap { 
-    display: flex; 
-    margin-top: 80px;
-    overflow: hidden;
+    display: flex;
+    position: absolute;
+    top: 30%;
   }
   .wrap .rolling-list ul { 
     display: flex;
@@ -234,7 +243,7 @@ img{display: block;}
   .wrap .rolling-list ul li { 
     box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
     width: 300px; 
-    height: 350px; 
+    height: 40vh; 
     box-sizing: border-box; 
     border-radius: 20px; 
     margin: 0 15px; /* 간격 */
@@ -252,7 +261,7 @@ img{display: block;}
     width: 100%;height: 100%;
     object-fit: cover;}
   .wrap .rolling-list img { 
-    width: 100%;height: 100%;
+    width: 100%;height: 100%;object-fit: cover;
   }
 
   .wrap .rolling-list li:hover{
@@ -343,7 +352,6 @@ img{display: block;}
 
 /* 5. 웅진의 소식 */
 .news{overflow: hidden;}
-.news > .inner1200{position: relative; padding-top: 160px;}
 .news .title{display: flex;}
 .news .more{
   margin: 0;
@@ -354,36 +362,38 @@ img{display: block;}
 
   /* 웅진소식 슬라이드 스와이퍼 서식 */
   .mySwiper3{
-    margin-top: 50px;width: 2034px;height: 450px;
+    margin-top: 50px;overflow: visible !important;
+    margin-left: 0 !important;
   }
   .mySwiper3 .swiper-wrapper{
+    width: 100%;
     display: flex;
   }
   .mySwiper3 .swiper-slide{
     margin-top: 10px;
-    margin-left: 6px;
-    height: 410px;
+    height: 380px;
     box-shadow: 0px 0px 6px gray;
+
   }
   .swiper-btn{
-    position: relative;
-    display: flex !important;
-    top: -516px; right: -100px;
+    top: 120px; right: 60px;
     font-size: var(--font_size_2);
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
   }
   .swiper-button-prev:hover, .swiper-button-next:hover{
     color: var(--main_color_1) !important;
   }
-  .swiper-button-prev:after, .swiper-button-next:after {
+  .swiper-button-prev:after, .swiper-button-next:after{
     display: none !important;
   }
   .swiper-button-prev{
-    position: relative;
-    left: 1020px !important;
+    position: inherit !important;
   }
   .swiper-button-next{
-    position: relative;
-    left: 1060px !important;
+    position: inherit !important;
   }
 
   /* 웅진소식 컨텐츠 서식 */
@@ -418,24 +428,26 @@ img{display: block;}
   .news_title{
     font-size: var(--font_size_4);
     font-weight: 600;
-    padding: 20px 20px 10px 20px;
-    height: 44px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: initial;
-  }
-  .news_sub{
-    font-size: var(--font_size_5);
-    opacity: 0.4;
-    padding: 0 20px;
-    height: 38px;
+    margin: 20px 20px 10px 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: initial;
     display: -webkit-box;  /* 2줄 이상 말줄임처리 */
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    margin-bottom: 20px;
+    text-wrap: wrap;
+  }
+  .news_sub{
+    font-size: var(--font_size_5);
+    opacity: 0.4;
+    margin: 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: initial;
+    text-wrap: wrap;
+    display: -webkit-box;  /* 2줄 이상 말줄임처리 */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
 /* 6. 인재채용 서식 */

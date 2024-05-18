@@ -13,7 +13,6 @@ $(document).ready(function(){
     bwLeft = $(document).scrollLeft();
     $('.h_inner').css('left',`-${bwLeft}px`)
   })
-
 })
 
 // 헤더 메뉴 언어 설정버튼
@@ -66,7 +65,6 @@ $(document).ready(function(){
         //console.log('슬라이드 밖이다')
         $(".util ul").slideUp();
       }
-
     })
   })
   
@@ -103,12 +101,23 @@ var swiper = new Swiper(".mySwiper2", {
 
 //웅진소식 슬라이드
 var swiper = new Swiper(".mySwiper3", {
-        slidesPerView: 5,
+  //0 ~ 375일때 (모바일일때 설정)
+  slidesPerView: 2,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints : { //반응형 설정
+    375 : { //375 ~ 768일때 (태블릿일때 설정)
+        slidesPerView : 2,
+        spaceBetween: 30,
+    },
+    768 : {  //768 이상 일때 (pc일때 설정)
+        slidesPerView : 3,
         spaceBetween: 50,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+    }
+  },
 });
 
 
@@ -177,6 +186,8 @@ $(document).ready(function(){
     $('.rolling-list.original').css('animation-play-state', 'paused');
     $('.rolling-list.clone').css('animation-play-state', 'paused');
 
+    $(this).find('img').css('filter','brightness(0.5)')
+
     //계열사 버튼 삽입하는 것
     let group_name = $(this).find('img').attr('alt');
     $(this).append("<div class='group_btn'><p>"+group_name+"</p><div><i class='fas fa-angle-right'></i></div></div>");
@@ -186,6 +197,7 @@ $(document).ready(function(){
     $('.rolling-list.clone').css('animation-play-state', 'running');
 
     $(this).find('.group_btn').remove();
+    $(this).find('img').css('filter','brightness(1)')
 
   });
 
@@ -212,21 +224,35 @@ $(document).ready(function(){
       $('body').children().css('width','100%')
     }else if(screenWidth>768){
       $('body').children().css('width','1200px')
-      //768이상일때 메인이미지 사이즈 변경(pc)
+      //---------768이상일때 메인이미지 사이즈 변경(pc)----------
       $('#img1').attr('src','./images/main1.png')
       $('#img2').attr('src','./images/main2.png')
       $('#img3').attr('src','./images/main3.png')
+
+      $('.wrap .rolling-list li').trigger('mouseleave');
     }else if(screenWidth>375){
       $('body').children().css('width','100%')
-      //768~375일때 메인이미지 사이즈 변경(태블릿)
+      //----------768~375일때 메인이미지 사이즈 변경(태블릿)---------
       $('#img1').attr('src','./images/ta_main1.png')
       $('#img2').attr('src','./images/ta_main2.png')
       $('#img3').attr('src','./images/ta_main3.png')
+
+      // 마우스 오버한 듯한 효과적용하여 계열사 버튼 생성
+      $('.wrap .rolling-list li').mouseover('a',function(){
+        $('.rolling-list.original').css('animation-play-state', 'running');
+        $('.rolling-list.clone').css('animation-play-state', 'running');
+      });
+      $('.wrap .rolling-list li').trigger('mouseover');
+
+      //웅진소식에 가로터치스크롤 되게 만들기
+      $('.mySwiper3').addClass('scroll-x');
+
     }else{
-      //375이하일때 메인이미지 사이즈 변경(모바일)
+      //-------------375이하일때 메인이미지 사이즈 변경(모바일)------------
       $('#img1').attr('src','./images/mo_main1.png')
       $('#img2').attr('src','./images/mo_main2.png')
       $('#img3').attr('src','./images/mo_main3.png')
+
     }
   }
   screen();
