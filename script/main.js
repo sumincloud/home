@@ -372,5 +372,14 @@ $(".quick li").click(function(){
 })
 
 
+//-----------------토글버튼 메뉴바 슬라이드 서식----------------
+$('#t_gnb > li p').click(function(){
+  //클릭할때마다 앵글다운 아이콘이 바뀌도록 수정할 것
+  //$(this).find('i').css('transform','rotate(180deg)')
+  $(this).parent().siblings().find('#t_sub').slideUp()
+  $(this).next().slideToggle()
+})
+
+
 
 
