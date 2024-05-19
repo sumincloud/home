@@ -26,7 +26,7 @@
 
   --swiper-theme-color: #333333 !important;
 
-  --full_h: 100%;
+  --full_h: 100vh;
 
 }
 
@@ -34,7 +34,7 @@
 #fullpage{height: 100%;} /* 풀페이지 스크롤되게 top 기준점 설정 */
 .full2, .full3, .full4, .full5, .full6, .full7{
   /* background: lightblue; */
-  height: calc(var(--full_h) - 100px);
+  height: calc((var(--var,1vh) * 100) - 100px);
   margin-top: 100px;
   position: relative;box-sizing: border-box;
 }

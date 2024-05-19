@@ -287,6 +287,17 @@ $(document).ready(function(){
 
 // ------------- 풀페이지 스크롤 ---------------
 
+//모바일뷰포트에 상단검색바랑 하단내비바 영역을 제외하는 설정
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  // resize
+  window.addEventListener('resize', () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+  })
+
+
 // 기본 스크롤 패시브 효과 제거
 window.addEventListener("scroll", function(e) {
   e.preventDefault();
