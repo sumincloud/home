@@ -48,6 +48,10 @@
   }
 
   /* ---------메인서식----------- */
+  #fullpage .inner1200{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
   .inner1200{
     width: 100%;
   }
@@ -77,6 +81,7 @@
     width: 50vh;
     height: 50vh;position:relative;
     animation: dung 1s infinite alternate;
+    max-width: 350px; max-height: 350px;
   }
 
   /* 3. 지속가능경영 */
@@ -205,10 +210,3 @@
 }
 
 
-
-@media screen and (max-width: 375px){
-  body{background-color: rgb(207, 187, 255);}
-
-
-  
-}

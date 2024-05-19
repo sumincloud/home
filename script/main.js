@@ -253,6 +253,27 @@ $(document).ready(function(){
       $('#img2').attr('src','./images/mo_main2.png')
       $('#img3').attr('src','./images/mo_main3.png')
 
+      //웅진소개글 글씨 줄바꿈 위치 변경
+      $('.intro .title dd').html('웅진은 새로운 사업분야에 진출하여 끊임없는<br>도전을 성공으로 이끌어나가는 동시에<br>웅진의 창조혁신을 꽃피운 긍정과 사랑의 정신을<br>소중하게 키우고 있습니다.')
+      //계열사 글씨 줄바꿈 위치 변경
+      $('.group .title dd').html('웅진의 기술과 즐거움으로 다가가<br>일상을 더 편하고 행복하게 물들여 갑니다.')
+      //지속가능경영 글씨 줄바꿈 위치 변경
+      $('.esg .title dd').html("웅진의 사회사랑은 나보다<br>'우리'를 생각하는데서 출발합니다.<br>웅진은 전사적 차원에서 환경사회공헌,<br>교육사회공헌, 이웃사회공헌에 중점을 두어<br>사회책임 활동을 확대해 나갈 것입니다.")
+      //웅진소식 글씨 줄바꿈 위치 변경
+      $('.news .title dd').html("오늘의 작은 성장으로<br>미래의 큰 꿈을 실현해 나갑니다.<br>우리 생활 곳곳에서 항상 함께하는<br>웅진의 소식을 확인하실 수 있습니다.")
+      //인재채용 글씨 줄바꿈 위치 변경
+      $('.recruit .title dd').html('전문성과 열정이 조화를 이룬<br>인재를 찾는 일에 최선을 다합니다.')
+
+      // 마우스 오버한 듯한 효과적용하여 계열사 버튼 생성
+      $('.wrap .rolling-list li').mouseover('a',function(){
+        $('.rolling-list.original').css('animation-play-state', 'running');
+        $('.rolling-list.clone').css('animation-play-state', 'running');
+      });
+      $('.wrap .rolling-list li').trigger('mouseover');
+
+      //웅진소식에 가로터치스크롤 되게 만들기
+      $('.mySwiper3').addClass('scroll-x');
+
     }
   }
   screen();
@@ -391,6 +412,10 @@ $('#t_gnb > li p').click(function(){
   //$(this).find('i').css('transform','rotate(180deg)')
   $(this).parent().siblings().find('#t_sub').stop().slideUp()
   $(this).next().stop().slideToggle()
+})
+
+$('.fa-bars').click(function(){
+  $('.t_btn').hide()
 })
 
 

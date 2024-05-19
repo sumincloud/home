@@ -322,6 +322,7 @@ header{
   background:white;
   padding: 0 70px 0 20px;
   transition:0.5s;
+  box-sizing: border-box;
 }
 /* 전체메뉴 클릭시 체크박스가 체크되면서 토글메뉴바가 안으로 들어오게 한다. */
 #toggle:checked ~ #toggle_menu{right:0px;}
