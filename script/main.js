@@ -266,66 +266,78 @@ $(document).ready(function(){
 
 // ------------- 풀페이지 스크롤 ---------------
 
-//자바스크립트로 기본 스크롤 패시브 효과 제거
-window.addEventListener("wheel", function(e){
-e.preventDefault();
-},{passive : false});
+// 기본 스크롤 패시브 효과 제거
+window.addEventListener("scroll", function(e) {
+  e.preventDefault();
+}, { passive: false });
 
-//변수 선언
+// 변수 선언
 var $html = $("html");
 var page = 1;
 var lastPage = $(".fullsection").length;
-$html.animate({scrollTop:0},10);
+$html.animate({ scrollTop: 0 }, 10);
 
+// PC에서의 스크롤 이벤트 처리
+$(window).on("wheel", function(e) {
+  if ($html.is(":animated")) return;
+  var deltaY = e.originalEvent.deltaY;
+  handleScroll(deltaY);
+});
 
-//스크롤 하는 함수
-$(window).on("wheel", function(e){
-  //처음페이지랑 마지막페이지에는 퀵버튼 안보이게
-  if(page==1||page==lastPage){
-    $('.quick').fadeOut(300)
-  }else{
-    $('.quick').fadeIn(300)
-  }
-  //처음페이지에는 탑버튼 안보이게
-  if(page==1){
-    $('.t_btn').fadeOut(300)
-  }else{
-    $('.t_btn').fadeIn(300)
-  }
+// 모바일에서의 터치 이벤트 처리
+var touchStartY = 0;
+
+window.addEventListener('touchstart', function(e) {
+  touchStartY = e.touches[0].clientY;
+});
+
+window.addEventListener('touchmove', function(e) {
+  if ($html.is(":animated")) return;
+  var touchEndY = e.touches[0].clientY;
+  var deltaY = touchStartY - touchEndY;
+  handleScroll(deltaY);
+  touchStartY = touchEndY;
+});
+
+function handleScroll(deltaY) {
   
-  //스크롤시 버튼 색상 변경
+    // 페이지 번호 업데이트
+    if (deltaY > 0) { // 아래로 스크롤
+      if (page < lastPage) {
+          page++;
+      }
+  } else if (deltaY < 0) { // 위로 스크롤
+      if (page > 1) {
+          page--;
+      }
+  }
+
+  // 처음 페이지랑 마지막 페이지에는 퀵버튼 안 보이게
+  if (page === 1 || page === lastPage) {
+      $('.quick').fadeOut(300);
+  } else {
+      $('.quick').fadeIn(300);
+  }
+
+  // 처음 페이지에는 탑버튼 안 보이게
+  if (page === 1) {
+      $('.t_btn').fadeOut(300);
+  } else {
+      $('.t_btn').fadeIn(300);
+  }
+
+  // 스크롤 시 버튼 색상 변경
   $('.quick ul li').removeClass('on');
-  $('.quick ul li').eq(page-1).addClass('on')
-  
-  if($html.is(":animated"))
-  return;
+  $('.quick ul li').eq(page - 1).addClass('on');
 
-
-  //스크롤할때 페이지 이동
-  if(e.originalEvent.deltaY > 0){
-    if(page == lastPage)
-    return;
-    //아래로 스크롤할때 페이지 2~7번째 헤더 색 하얗게 만들기
-    if(page==1||page==2||page==3||page==4||page==5||page==6){
-      $(header).css({'background':'#fff','border-bottom':'1px solid #ccc'})
-      $('.lnb > li > a').css('opacity','1')
-    }
-    //페이지 번호 증가
-    page++;
-  }else if(e.originalEvent.deltaY < 0){
-    if(page == 1)
-    return;
-    page--;
-    //페이지를 위로 올릴때(첫페이지로 갈때) 헤더색 투명하게
-    if(page==1){
-      $(header).css({'background':'rgba(255,255,255,0.5)','border-bottom':'none'})
-      $('.lnb > li > a').css('opacity','0.3')
-    }
+  // 페이지가 2~7일 때 헤더 하얗게 하기
+  if (page >= 2 && page <= 7) {
+      $(header).css({'background': '#fff', 'border-bottom': '1px solid #ccc'});
+      $('.lnb > li > a').css('opacity', '1');
   }
-
-  //페이지 위치 이동하는 부분
-  var posTop = (page-1) * $(window).height();
-  $html.animate({scrollTop : posTop},500);
+  // 페이지 위치 이동하는 부분
+  var posTop = (page - 1) * $(window).height();
+  $html.animate({ scrollTop: posTop }, 500);
 
   //탑버튼 클릭시 맨위로 이동하고
   $('.t_btn').click(function(){
@@ -335,15 +347,16 @@ $(window).on("wheel", function(e){
     $('.quick').fadeOut(300);
   })
 
-  //페이지가 2~7일때 마우스 오버시 헤더 하얗게하기
-  $(header).hover(function(){
-    if(page==2||page==3||page==4||page==5||page==6||page==7){
-      $(header).css('background','#fff')
-      $('.lnb > li > a').css('opacity','1')
-    }
-  })
+  // 페이지가 처음이거나 마지막일 때 헤더 색상 처리
+  if (page === 1) {
+      $(header).css({ 'background': 'rgba(255,255,255,0.5)', 'border-bottom': 'none' });
+      $('.lnb > li > a').css('opacity', '0.3');
+  } else if (page === lastPage) {
+      $(header).css({ 'background': '#fff', 'border-bottom': '1px solid #ccc' });
+      $('.lnb > li > a').css('opacity', '1');
+  }
+}
 
-});
 
 
 //-----------------퀵버튼 항상 보이게 해놓기-----------
