@@ -376,8 +376,8 @@ $(".quick li").click(function(){
 $('#t_gnb > li p').click(function(){
   //클릭할때마다 앵글다운 아이콘이 바뀌도록 수정할 것
   //$(this).find('i').css('transform','rotate(180deg)')
-  $(this).parent().siblings().find('#t_sub').slideUp()
-  $(this).next().slideToggle()
+  $(this).parent().siblings().find('#t_sub').stop().slideUp()
+  $(this).next().stop().slideToggle()
 })
 
 

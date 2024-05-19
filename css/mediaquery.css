@@ -121,17 +121,19 @@
 
 
 /* ------------------------태블릿 버전 서식----------------------- */
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
   body{background-color: #cfc;overflow-x: hidden;}
   .quick{display: none !important;}
   .fa-bars{display: block !important; }
   /* --------------헤더서식------------ */
+  .h_inner{display: block;}
   .h_inner .inner1200{display: none;}
   .gnb{display: none;}
   .h_inner > .util{display: none;}
   .logo{
     margin-left: 0%;
     left: 50%; transform: translate(-50%,-50%);
+    width: 160px;
   }
   header{
     background: white !important;
@@ -205,13 +207,13 @@
     margin-bottom: 20px;
   }
   .mySwiper3{
-    margin-top: 70px;
+    margin-top: 80px;
   }
   .mySwiper3 .swiper-slide{
     height: 100%;
   }
   .swiper-btn{
-    top: 150px; right: 60px;
+    top: 170px; right: 60px;
   }
 
   /* 6. 인재채용 */
@@ -291,13 +293,15 @@
 
 }
 
-@media (max-width: 620px){  /* 620px보다 작아지면 인재채용의 버튼 숨겨지게함 */
-  body{background-color: rgb(207, 187, 255);}
+@media screen and (max-width: 620px){  /* 620px보다 작아지면 인재채용의 버튼 숨겨지게함 */
   .recruit_btn{display: none !important;}
 }
 
 
 
-@media (max-width: 375px){
+@media screen and (max-width: 375px){
   body{background-color: rgb(207, 187, 255);}
+
+
+  
 }
