@@ -28,7 +28,7 @@
 
 /* ------------------------모바일 버전 서식----------------------- */
 @media (max-width: 375px){
-  body{background-color: violet;overflow-x: hidden;}
+  body{overflow-x: hidden;}
   .t_btn{
     right: 8%;
     bottom: 5%;
