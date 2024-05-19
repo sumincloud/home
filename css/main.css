@@ -33,7 +33,7 @@
 /* -----메인 컨텐츠 공통 사이즈----- */
 #fullpage{height: 100%;} /* 풀페이지 스크롤되게 top 기준점 설정 */
 .full2, .full3, .full4, .full5, .full6, .full7{
-  background: lightblue;
+  /* background: lightblue; */
   height: calc(var(--full_h) - 100px);
   margin-top: 100px;
   position: relative;box-sizing: border-box;
@@ -48,7 +48,7 @@
 
 .inner1200{
   width: var(--container_size);margin: 0 auto;
-  background: skyblue;
+  /* background: skyblue; */
 }
 /* .fullsection .inner1200{padding-top: 140px;} */
 
