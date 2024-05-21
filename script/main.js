@@ -101,7 +101,7 @@ var swiper = new Swiper(".mySwiper2", {
 
 //웅진소식 슬라이드
 var swiper = new Swiper(".mySwiper3", {
-  //0 ~ 375일때 (모바일일때 설정)
+  //0 ~ 768일때 (모바일일때 설정)
   slidesPerView: 2,
   spaceBetween: 30,
   navigation: {
@@ -109,11 +109,11 @@ var swiper = new Swiper(".mySwiper3", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints : { //반응형 설정
-    375 : { //375 ~ 768일때 (태블릿일때 설정)
-        slidesPerView : 2,
+    768 : { //768~1024일때 (태블릿일때 설정)
+        slidesPerView : 3,
         spaceBetween: 30,
     },
-    768 : {  //768 이상 일때 (pc일때 설정)
+    1024 : {  //1024 이상 일때 (pc일때 설정)
         slidesPerView : 3,
         spaceBetween: 50,
     }
@@ -193,13 +193,72 @@ $(document).ready(function(){
     $(this).append("<div class='group_btn'><p>"+group_name+"</p><div><i class='fas fa-angle-right'></i></div></div>");
 
   },function(){  //마우스 뗐을때
-    $('.rolling-list.original').css('animation-play-state', 'running');
-    $('.rolling-list.clone').css('animation-play-state', 'running');
-
-    $(this).find('.group_btn').remove();
-    $(this).find('img').css('filter','brightness(1)')
+    var screenWidth = $(window).width()
+    if(screenWidth>1024){
+      $('.rolling-list.original').css('animation-play-state', 'running');
+      $('.rolling-list.clone').css('animation-play-state', 'running');
+  
+      $(this).find('.group_btn').remove();
+      $(this).find('img').css('filter','brightness(1)')
+    }else{}
 
   });
+
+  /* 계열사 클릭시 사이트 이동하는 함수 */
+  $(function(){
+    $('.rolling-list li:nth-of-type(1)').click(function(){
+      location.href = './family_site.html'
+    })
+    $('.rolling-list li:nth-of-type(2)').click(function(){
+      location.href = './family_site.html'
+    })
+    $('.rolling-list li:nth-of-type(3)').click(function(){
+      location.href = './family_site.html'
+    })
+    $('.rolling-list li:nth-of-type(4)').click(function(){
+      location.href = './family_site.html'
+    })
+    $('.rolling-list li:nth-of-type(5)').click(function(){
+      location.href = './family_site.html'
+    })
+    $('.rolling-list li:nth-of-type(6)').click(function(){
+      location.href = './family_site.html'
+    })
+    $('.rolling-list li:nth-of-type(7)').click(function(){
+      location.href = './family_site.html'
+    })
+    $('.rolling-list li:nth-of-type(8)').click(function(){
+      location.href = './family_site.html'
+    })
+  })
+
+  /* 웅진소식 컨텐츠 클릭시 사이트 이동하는 함수 */
+  $(function(){
+    $('.mySwiper3 > div > div:nth-of-type(1)').click(function(){
+      location.href = 'http://chaesuehyun.dothome.co.kr/bbs/bbs/board.php?bo_table=news&wr_id=6'
+    })
+    $('.mySwiper3 > div > div:nth-of-type(2)').click(function(){
+      location.href = 'http://chaesuehyun.dothome.co.kr/bbs/bbs/board.php?bo_table=news&wr_id=6'
+    })
+    $('.mySwiper3 > div > div:nth-of-type(3)').click(function(){
+      location.href = 'http://chaesuehyun.dothome.co.kr/bbs/bbs/board.php?bo_table=news&wr_id=6'
+    })
+    $('.mySwiper3 > div > div:nth-of-type(4)').click(function(){
+      location.href = 'http://chaesuehyun.dothome.co.kr/bbs/bbs/board.php?bo_table=news&wr_id=6'
+    })
+    $('.mySwiper3 > div > div:nth-of-type(5)').click(function(){
+      location.href = 'http://chaesuehyun.dothome.co.kr/bbs/bbs/board.php?bo_table=news&wr_id=6'
+    })
+    $('.mySwiper3 > div > div:nth-of-type(6)').click(function(){
+      location.href = 'http://chaesuehyun.dothome.co.kr/bbs/bbs/board.php?bo_table=news&wr_id=6'
+    })
+    $('.mySwiper3 > div > div:nth-of-type(7)').click(function(){
+      location.href = 'http://chaesuehyun.dothome.co.kr/bbs/bbs/board.php?bo_table=news&wr_id=6'
+    })
+    $('.mySwiper3 > div > div:nth-of-type(8)').click(function(){
+      location.href = 'http://chaesuehyun.dothome.co.kr/bbs/bbs/board.php?bo_table=news&wr_id=6'
+    })
+  })
 
 
 
@@ -222,7 +281,7 @@ $(document).ready(function(){
     if(screenWidth >= 1200){
       //body컨텐츠의 하위 자식요소들 전부 속성 변경
       $('body').children().css('width','100%')
-    }else if(screenWidth>768){
+    }else if(screenWidth>1024){
       $('body').children().css('width','1200px')
       //---------768이상일때 메인이미지 사이즈 변경(pc)----------
       $('#img1').attr('src','./images/main1.png')
@@ -230,9 +289,9 @@ $(document).ready(function(){
       $('#img3').attr('src','./images/main3.png')
 
       $('.wrap .rolling-list li').trigger('mouseleave');
-    }else if(screenWidth>375){
+    }else if(screenWidth<=1024){
       $('body').children().css('width','100%')
-      //----------768~375일때 메인이미지 사이즈 변경(태블릿)---------
+      //----------1024이하일때 메인이미지 사이즈 변경(태블릿)---------
       $('#img1').attr('src','./images/ta_main1.png')
       $('#img2').attr('src','./images/ta_main2.png')
       $('#img3').attr('src','./images/ta_main3.png')
@@ -247,8 +306,8 @@ $(document).ready(function(){
       //웅진소식에 가로터치스크롤 되게 만들기
       $('.mySwiper3').addClass('scroll-x');
 
-    }else{
-      //-------------375이하일때 메인이미지 사이즈 변경(모바일)------------
+    }else if(screenWidth<=768){
+      //-------------768이하일때 메인이미지 사이즈 변경(모바일)------------
       $('#img1').attr('src','./images/mo_main1.png')
       $('#img2').attr('src','./images/mo_main2.png')
       $('#img3').attr('src','./images/mo_main3.png')
@@ -421,7 +480,7 @@ $(".quick li").click(function(){
 $('#t_gnb > li p').click(function(){
   //클릭할때마다 앵글다운 아이콘이 바뀌도록 수정할 것
   //$(this).find('i').css('transform','rotate(180deg)')
-  $(this).parent().siblings().find('#t_sub').stop().slideUp()
+  $(this).parent().siblings().find('.t_sub').stop().slideUp()
   $(this).next().stop().slideToggle()
 })
 

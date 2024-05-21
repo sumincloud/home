@@ -27,7 +27,7 @@
 
 
 /* ------------------------모바일 버전 서식----------------------- */
-@media (max-width: 375px){
+@media screen and (max-width: 768px){
   body{overflow-x: hidden;}
   .t_btn{
     right: 8%;
@@ -109,16 +109,17 @@
   .news .inner1200{
     height: 80vh;
   }
+  .news .title{padding-bottom: 10vh;}
   .news_title{font-size: var(--font_size_5);}
   .news_sub{font-size: var(--font_size_6);}
 
   .mySwiper3 {
-    margin-top: 50px;
+    margin-top: 0px;
   }
   .swiper-btn{
     font-size: var(--font_size_3);
     right: 20px;
-    top: 170px;
+    
   }
   .swiper-btn .swiper-button-next,  .swiper-btn .swiper-button-prev{
     width: 40px;
@@ -126,10 +127,10 @@
 
 
   /* 6. 인재채용 */
-  .recruit .inner1200{height: 80vh;}
+  .recruit .inner1200{height: auto;}
   .recruit .more{margin-top: 50px;}
   .recruit_list .sub_title dd{text-wrap: wrap;}
-  .recruit_list li{width: 300px; height: 100px;margin: 0 auto 10px auto;}
+  .recruit_list li{width: 80%; height: 100px;margin: 0 auto 10px auto;}
   .recruit_list li div img {
     width: 60px;
     height: 60px;
@@ -159,13 +160,13 @@
 
   /* 7. 푸터서식 */
   .btm_box{display: block;}
-  .btm_box div{margin-left: 0;}
+  .btm_box div:nth-child(2){margin-left: 0;}
   .btm_box ul{justify-content: center;margin: 80px auto 0 auto;}
   .btm_box li{font-size: 11px;text-align: center;}
   .btm_box li:nth-of-type(2){width:auto;}
 
   #site{margin: 0 auto;display: block;position: relative;top: -120px;}
-  .btm_box h2{top: 160px;}
+  .btm_box div:nth-child(1){top: 160px;}
   .copy{font-size: 11px;}
 
 
